@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>What is PowerShell App Deployment Toolkit | TheTechGuy Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="What is PowerShell App Deployment Toolkit | TheTechGuy Docs ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="docs.thetechguy.com">
+            docs.thetechguy.com
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="bd82d412-f0b4-4865-8291-839e2e5afd94">
+<h1 id="what-is-powershell-app-deployment-toolkit">What is PowerShell App Deployment Toolkit?</h1>
+
+<p>The PowerShell App Deployment Toolkit (PSADT) provides a set of functions to perform common application deployment tasks and to interact with the user during a deployment. It simplifies the complex scripting challenges of deploying applications in the enterprise, provides a consistent deployment experience and improves installation success rates.<sup>[<a href="https://psappdeploytoolkit.com">1</a>]</sup></p>
+<p>    <img src="https://psappdeploytoolkit.com/images/psadt-dark-navheader.svg" alt="Image"></p>
+<p>The PowerShell App Deployment Toolkit can be used to replace your WiseScript, VBScript and Batch wrapper scripts with one versatile, re-usable and extensible tool.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Easy To Use</strong> – Any PowerShell beginner can use the template and the functions provided with the Toolkit to perform application deployments.</li>
+<li><strong>Consistent</strong> – Provides a consistent look and feel for all application deployments, regardless of complexity.</li>
+<li><strong>Powerful</strong> – Provides a set of functions to perform common deployment tasks, such as installing or uninstalling multiple applications, prompting users to close apps, setting registry keys, copying files, etc.</li>
+<li><strong>User Interface</strong> – Provides user interaction through customizable user interface dialogs boxes, progress dialogs and balloon tip notifications.</li>
+<li><strong>Localized</strong> – The UI is localized in several languages and more can easily be added using the XML configuration file.</li>
+<li><strong>Integration</strong> – Integrates well with ConfigMgr (SCCM); provides installation and uninstallation deployment types with options on how to handle exit codes, such as suppressing reboots or returning a fast retry code.</li>
+<li><strong>Updatable</strong> – The logic engine and functions are separated from per-application scripts, so that you can update the toolkit when a new version is released and maintain backwards compatibility with your deployment scripts.</li>
+<li><strong>Extensible</strong> – The Toolkit can be easily extended to add custom scripts and functions.</li>
+<li><strong>Helpful</strong> – The Toolkit provides detailed logging of all actions performed and even includes a graphical console to browse the help documentation for the Toolkit functions.</li>
+</ul>
+<h2 id="functionality">Functionality</h2>
+<h3 id="user-interface">User Interface</h3>
+<ul>
+<li>An interface to prompt the user to close specified applications that are open prior to starting the application deployment. The user is prompted to save their documents and has the option to close the applications themselves, have the toolkit close the running executables, or optionally defer. Optionally, a countdown can be displayed until the applications are automatically closed.</li>
+<li>The ability to allow the user to defer an installation X number of times, X number of days or until a deadline date is reached.</li>
+<li>The ability to prevent the user from launching the applications that need to be closed while the application installation is in progress.</li>
+<li>An indeterminate progress dialog with customizable message text that can be updated throughout the deployment.</li>
+<li>A restart prompt with an option to restart later or restart now and a countdown to automatic restart.</li>
+<li>The ability to notify the user if disk space requirements are not met.</li>
+<li>Custom dialog boxes with options to customize title, text, buttons &amp; icon.</li>
+<li>Balloon tip notifications to indicate the beginning and end of an installation and the success or failure of an installation.</li>
+<li>Branding of the above UI components using a custom logo icon and banner for your own Organization.</li>
+<li>The ability to run in interactive, silent (no dialogs) or non-interactive mode (default for running SCCM task sequence or session 0).</li>
+<li>The UI is localized in several languages and more can easily be added using the XML configuration file.</li>
+</ul>
+<h3 id="functions--logic">Functions / Logic</h3>
+<ul>
+<li>Provides extensive logging of both the Toolkit functions and any MSI installation / uninstallation.</li>
+<li>Provides the ability to execute any type of setup (MSI or EXEs) and handle / translate the return codes.</li>
+<li>Mass remove MSI applications with a partial match (e.g. remove all versions of all MSI applications which match &quot;Office&quot;).</li>
+<li>Check for in-progress MSI installations and wait for MSI Mutex to become available.</li>
+<li>Send a sequence of keys to an application window.</li>
+<li>Perform ConfigMgr (SCCM) actions such as Machine and User Policy Refresh, Inventory Update and Software Update.</li>
+<li>Supports installation of applications on Citrix XenApp/Remote Desktop Session Host Servers.</li>
+<li>Update Group Policy.</li>
+<li>Copy / Delete Files.</li>
+<li>Get / Set / Remove Registry Keys and Values.</li>
+<li>Get / Set Ini File Keys and Values.</li>
+<li>Check File versions.</li>
+<li>Pin or Unpin applications to the Start Menu or Task Bar.</li>
+<li>Create Start Menu Shortcuts.</li>
+<li>Register / Unregister DLL files.</li>
+<li>Refresh desktop icons.</li>
+<li>Information the user should notice even if skimmingTest network connectivity.</li>
+<li>Test power connectivity.</li>
+<li>Check whether a PowerPoint slideshow is running.</li>
+</ul>
+<h3 id="sccm-integration">SCCM Integration</h3>
+<ul>
+<li>Handles ConfigMgr exit codes, including time sensitive dialogs supporting ConfigMgr's Fast Retry feature – providing more accurate ConfigMgr Reporting (no more Failed due to timeout errors).</li>
+<li>Ability to prevent reboot codes (3010) from being passed back to ConfigMgr, which would cause a reboot prompt.</li>
+<li>Supports the CM12 application model by providing an install and uninstall deployment type for every deployment script.</li>
+<li>Bundle multiple application installations to overcome the supported limit of 5 applications in the CM12 application dependency chain.</li>
+<li>Compared to compiled deployment packages, e.g. WiseScript, the Toolkit utilises the ConfigMgr cache correctly and ConfigMgr Distribution Point bandwidth more efficiently by using loose files.</li>
+</ul>
+<h3 id="help-console">Help Console</h3>
+<ul>
+<li>A graphical console for browsing the help documentation for the toolkit functions.</li>
+</ul>
+<h2 id="references">References</h2>
+<ol>
+<li>PowerShell App Deploy Toolkit about page. <a href="https://psappdeploytoolkit.com">https://psappdeploytoolkit.com</a></li>
+</ol>
+<h2 id="external-links">External Links</h2>
+<ul>
+<li><a href="https://psappdeploytoolkit.com">PSAppDeployToolkit</a></li>
+</ul>
+<!--Reference links in article-->
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright 2018-2024 TheTechGuy<br>Generated by <strong>DocFX</strong></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

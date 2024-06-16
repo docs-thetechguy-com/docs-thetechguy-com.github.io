@@ -1,0 +1,21 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: 0cff4168-46e0-45cb-9333-84ad84ce550c
+  name: Windows
+  href: Windows/index.html
+- uid: a94933ca-6085-46a4-a730-5e69b44be36d
+  name: Getting Started with PowerShell App Deployment Toolkit
+  href: psadt/getting-started-with-psadt.html
+- uid: b44d73ad-a5bb-408a-90e9-44f3739f75f5
+  name: Windows 11 ARM on OPi5
+  href: Windows/Windows11ARM-on-OPi5.html
+- uid: bd82d412-f0b4-4865-8291-839e2e5afd94
+  name: What is PowerShell App Deployment Toolkit
+  href: psadt/what-is-psadt.html
+- uid: cadf1e12-d34f-4e41-bb2f-24a6fa59a7b2
+  name: PowerShell App Deploy Toolkit documentation
+  href: psadt/index.html
+- uid: de2e5e05-dade-4d97-a7c9-307d6e28edee
+  name: Repository of PSADT Scripts
+  href: psadt/repository-of-psadt-scripts.html
