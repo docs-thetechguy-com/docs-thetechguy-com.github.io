@@ -1,0 +1,32 @@
+# -----------------------------------------------------------------------------
+# Node, TypeScript, Python
+# -----------------------------------------------------------------------------
+
+# Dependencies
+node_modules
+
+# Build files
+build
+site
+
+# Distribution files
+dist
+
+# Caches and logs
+*.log
+.cache
+__pycache__
+
+# Examples
+example
+
+# -----------------------------------------------------------------------------
+# General
+# -----------------------------------------------------------------------------
+
+# Temporary files
+TODO
+tmp
+
+# IDEs & Editors
+.vscode
