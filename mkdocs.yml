@@ -112,8 +112,10 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/docs-thetechguy-com
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/TheTechGuy
+    - icon: simple/youtube
+      link: https://www.youtube.com/@TheTechGuy86
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/TheTechGuy86
   consent:
     title: Cookie consent
     description: >-
