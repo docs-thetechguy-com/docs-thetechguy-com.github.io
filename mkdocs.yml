@@ -157,7 +157,7 @@ nav:
 
 - PSAppDeployToolkit:
   - psadt/index.md
-  - psadt/repository/index.md
+  - Repository: https://github.com/docs-thetechguy-com/psadt/tree/main/repository
 - Windows:
   - windows/windows11-arm/windows11arm-on-opi5.md
 
