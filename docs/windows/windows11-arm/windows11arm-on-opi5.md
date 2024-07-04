@@ -1,8 +1,7 @@
 ---
-title: Windows 11 ARM on OPi5
-author: Brian Knackstedt
-creationdate: 06/30/2024
-lastModified: 06/30/2024
+author: 
+  - Brian Knackstedt
+Date: 2024-06-30
 ---
 # Windows 11 ARM on OPi5
 This guide describes how to install the latest Windows 11 ARM image on an Orange Pi 5.
@@ -29,28 +28,25 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
 
 Reference: https://wiki.radxa.com/Rock5/install/spi (section 4, option 2)
 
+**Download**
+
 - Download rkdevtools and install driver
   - https://wiki.radxa.com/Rock5/install/rockchip-flash-tools
-  
+
 - Download latest EDK2 UEFI firmware for Orange Pi 5
   0.9.1 does not support built-in GMAC ethernet, use a newer build.
+  - Open https://github.com/edk2-porting/edk2-rk3588/actions/workflows/build.yml
+  - Sign in to GitHub
+  - Select latest successful build
+  - Download orangepi-5 UEFI Debug image
+  - Extract download
 
-- Open https://github.com/edk2-porting/edk2-rk3588/actions/workflows/build.yml
-
-- Sign in to GitHub
-
-- Select latest successful build
-
-- Download orangepi-5 UEFI Debug image
-
-- Extract download
-
-  **Write firmware**
+**Write firmware**
 
 - Open RKDevTool as Administrator
 
 - Right-click and select Load Config
-  
+
   - Select rock-5b-spinor.cfg
   - Click empty box under … to select file
 
@@ -58,10 +54,10 @@ Reference: https://wiki.radxa.com/Rock5/install/spi (section 4, option 2)
   - Orangepi-5_UEFI.img for Image
   - Check Write by Address
   - Connect OPi5 from USB-C port to PC
-  
+
 - Hold down MARKROM button and connect USB-C power, wait a few seconds and release button
 
-  ![MaskKey](/media/Windows11ARM-on-OPi5/MaskKey.png)
+	![MaskKey](assets/OPi5-MaskKey.png)
 
 - Status in RKDevTool should change from No Devices Found to Found One MASKROM Device
 
@@ -92,13 +88,13 @@ Driver download messages are pinned in the #development channel
 - Open https://uupdump.net/
 
 - Select arm64 build, typically choose the latest public release build
-
-  ![uupdump-arch](/media/Windows11ARM-on-OPi5/uupdump-arch.png)
+	
+	![uupdump-arch](assets/uupdump-arch.png)	
 
 - Select update
-  
-  ![uupdump-update](/media/Windows11ARM-on-OPi5/uupdump-update.png)
-  
+
+	![uupdump-update](assets/uupdump-update.png)
+
 - Choose language and click Next
 
 - Uncheck Windows Home and click Next
