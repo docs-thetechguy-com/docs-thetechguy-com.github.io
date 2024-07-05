@@ -661,9 +661,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-windows-arm64-release-package" class="md-nav__link">
+  <a href="#download-windows-11-arm64-release-package" class="md-nav__link">
     <span class="md-ellipsis">
-      Download Windows arm64 release package
+      Download Windows 11 arm64 release package
     </span>
   </a>
   
@@ -786,9 +786,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#download-windows-arm64-release-package" class="md-nav__link">
+  <a href="#download-windows-11-arm64-release-package" class="md-nav__link">
     <span class="md-ellipsis">
-      Download Windows arm64 release package
+      Download Windows 11 arm64 release package
     </span>
   </a>
   
@@ -916,62 +916,73 @@
 <h2 id="hardware-requirements"><strong>Hardware Requirements</strong><a class="headerlink" href="#hardware-requirements" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Orange Pi 5 (<a href="http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5.html">OPi5</a>) and newer devices support ARMv8.2
-  Windows 11 requires ARMv8.1
-  As of June 2024, Orange Pi 5 Pro is not supported</p>
+<p><a href="http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5.html">Orange Pi 5 (OPi5)</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>OPi5 supports ARMv8.2. Windows 11 requires ARMv8.1</p>
+<p>As of June 2024, Orange Pi 5 Pro is not supported by this project.</p>
+</div>
 </li>
 <li>
-<p>USB hub (<a href="https://www.amazon.com/gp/product/B08P3GDLVP">uni USB C to USB Hub 4 Ports</a>)
-  USB hub is requires as only the vertical USB-A ports will work for keyboard and mouse. Any USB hub may work, this is just want I had.</p>
+<p>USB hub (<a href="https://www.amazon.com/gp/product/B08P3GDLVP">uni USB C to USB Hub 4 Ports</a>)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USB hub is requires as only the vertical USB-A ports will work for keyboard and mouse. Any USB hub may work, this is just want I had. </p>
+</div>
 </li>
 <li>
 <p>USB-C to USB-A adapter for hub</p>
 </li>
 <li>
-<p>NVMe drive (<a href="https://www.amazon.com/gp/product/B07XVTRFF8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;th=1">SABRENT 1TB Rocket NVMe PCIe M.2 2242</a>)
-  Must be NVMe M.2. Some NVMe drives do not have driver support.
-  All M.2 SATA drives do not have driver support.</p>
+<p>NVMe drive (such as a <a href="https://www.amazon.com/gp/product/B07XVTRFF8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;th=1">SABRENT 1TB Rocket NVMe PCIe M.2 2242</a>)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Must be a NVMe M.2 drive. You may find some NVMe drives do not have driver support. I have found SABENT brand is supported. </p>
+</div>
+<p>There is no driver support for All M.2 SATA drives.</p>
 </li>
 <li>
-<p><a href="https://www.amazon.com/gp/product/B086T2KXGQ">M.2 SSD Screw Set</a></p>
+<p><a href="https://www.amazon.com/gp/product/B086T2KXGQ">M.2 SSD screw set</a></p>
 </li>
 <li>USB keyboard and mouse</li>
 </ul>
 <h2 id="install-uefi-firmware-to-spi-nor-flash"><strong>Install UEFI firmware to SPI NOR flash</strong><a class="headerlink" href="#install-uefi-firmware-to-spi-nor-flash" title="Permanent link">&para;</a></h2>
-<p>Reference: https://wiki.radxa.com/Rock5/install/spi (section 4, option 2)</p>
+<p><a href="https://wiki.radxa.com/Rock5/install/spi">Reference Guide</a> (see Flash with Windows PC in section 4, option 2)</p>
 <p><strong>Download</strong></p>
 <ul>
-<li>Download rkdevtools and install driver</li>
 <li>
-<p>https://wiki.radxa.com/Rock5/install/rockchip-flash-tools</p>
+<p>Download and install <a href="https://wiki.radxa.com/Rock5/install/rockchip-flash-tools">rkdevtools</a></p>
 </li>
 <li>
-<p>Download latest EDK2 UEFI firmware for Orange Pi 5
-  0.9.1 does not support built-in GMAC ethernet, use a newer build.</p>
+<p>Download and extract latest successful build of <a href="https://github.com/edk2-porting/edk2-rk3588/actions/workflows/build.yml">EDK2 UEFI firmware</a> for orangepi-5 UEFI Debug image</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>0.9.1 does not support built-in GMAC ethernet, use a newer build.</p>
+</div>
 </li>
-<li>Open https://github.com/edk2-porting/edk2-rk3588/actions/workflows/build.yml</li>
-<li>Sign in to GitHub</li>
-<li>Select latest successful build</li>
-<li>Download orangepi-5 UEFI Debug image</li>
-<li>Extract download</li>
 </ul>
 <p><strong>Write firmware</strong></p>
 <ul>
 <li>
-<p>Open RKDevTool as Administrator</p>
+<p>Open RKDevTool as an Administrator</p>
 </li>
 <li>
 <p>Right-click and select Load Config</p>
-</li>
-<li>
-<p>Select rock-5b-spinor.cfg</p>
-</li>
+<ul>
+<li>Select rock-5b-spinor.cfg</li>
 <li>
 <p>Click empty box under … to select file</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li>Rk3588_spl_loader.bin for Loader</li>
 <li>Orangepi-5_UEFI.img for Image</li>
-<li>Check Write by Address</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Check Write by Address</p>
+</li>
 <li>Connect OPi5 from USB-C port to PC</li>
 </ul>
 </li>
@@ -987,34 +998,30 @@
 </li>
 <li>
 <p>Process is done when "Download image OK" is displayed in the logging pane. </p>
-</li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>OPi5 will restarts by itself and exits MASKROM mode</p>
-<ul>
-<li>Disconnect from PC</li>
+</div>
+</li>
+<li>
+<p>Disconnect from PC</p>
+</li>
 </ul>
 <h2 id="download-drivers"><strong>Download Drivers</strong><a class="headerlink" href="#download-drivers" title="Permanent link">&para;</a></h2>
-<p>Driver download messages are pinned in the #development channel</p>
+<p>Driver download posts are pinned in the #development discord channel</p>
 <ul>
-<li>Download and extract RK3588 signed drivers</li>
-<li>https://discord.com/channels/1082772881735438346/1082848823233216532/1236925998696763392</li>
-<li>Download updated storage driver (pdb, inf, and sys)</li>
-<li>
-<p>https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage</p>
-</li>
-<li>
-<p>Download updated USB driver (inf and sys)</p>
-</li>
-<li>https://github.com/worproject/Rockchip-Windows-Drivers/tree/master/drivers/usb/usbehci_nointerlocked</li>
-<li>Add updated drivers to rk3588_drivers zip file</li>
+<li>Download and extract <a href="https://discord.com/channels/1082772881735438346/1082848823233216532/1236925998696763392">RK3588 signed drivers</a></li>
+<li>Download updated <a href="https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage">storage driver (pdb, inf, and sys)</a></li>
+<li>Download updated <a href="https://github.com/worproject/Rockchip-Windows-Drivers/tree/master/drivers/usb/usbehci_nointerlocked">USB driver (inf and sys)</a></li>
+<li>Add updated drivers to rk3588_drivers ZIP file</li>
 </ul>
-<h2 id="download-windows-arm64-release-package"><strong>Download Windows arm64 release package</strong><a class="headerlink" href="#download-windows-arm64-release-package" title="Permanent link">&para;</a></h2>
+<h2 id="download-windows-11-arm64-release-package"><strong>Download Windows 11 arm64 release package</strong><a class="headerlink" href="#download-windows-11-arm64-release-package" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Open https://uupdump.net/</p>
+<p>Open <a href="https://uupdump.net">uupdump</a></p>
 </li>
 <li>
-<p>Select arm64 build, typically choose the latest public release build</p>
+<p>Select arm64 build, I typically choose the latest public release build</p>
 <p><img alt="uupdump-arch" src="../assets/uupdump-arch.png" />    </p>
 </li>
 <li>
@@ -1028,36 +1035,33 @@
 <p>Uncheck Windows Home and click Next</p>
 </li>
 <li>
-<p>Select Download, add additional editions and convert to ISO</p>
+<p>Select Download and convert to ISO</p>
 </li>
 <li>
-<p>Check only Windows Enterprise</p>
+<p>Click Create download package</p>
 </li>
 <li>
-<p>Click Create download package file to download package</p>
-</li>
-<li>
-<p>Extract package to a folder that does not contain spaces in the path</p>
+<p>Extract package to a folder that does not contain spaces in the path. Example: C:\ISO</p>
 </li>
 </ul>
 <h2 id="generate-windows-iso"><strong>Generate Windows ISO</strong><a class="headerlink" href="#generate-windows-iso" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Run uup_download_windows.cmd</li>
-<li>Wait 60-minutes for files to be downloaded, processed, and ISO generated </li>
+<li>Run <code>uup_download_windows.cmd</code></li>
+<li>Wait for files to be downloaded, processed, and ISO generated. Typically 60-minutes.</li>
 </ul>
 <h2 id="install-windows-onto-nvme-drive"><strong>Install Windows onto NVMe Drive</strong><a class="headerlink" href="#install-windows-onto-nvme-drive" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Download and extract imager</li>
-</ul>
-<p>Ignore that it says Raspberry. This was original built for Raspberry Pi devices, but developer has been extended support to Orange Pi devices)</p>
-<ul>
 <li>
-<p>https://worproject.com/downloads#windows-on-raspberry-imager</p>
+<p>Download and extract <a href="https://worproject.com/downloads#windows-on-raspberry-imager">imager</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ignore that it says Raspberry. This was original built for Raspberry Pi devices, but developer has been extended support to Orange Pi devices)</p>
+</div>
 </li>
 <li>
 <p>Plug the NVMe drive into your PC</p>
 </li>
-<li>Run WoR.exe as an Administrator</li>
+<li>Run <code>WoR.exe</code> as an Administrator<ul>
 <li>Set wizard mode = Select show all options</li>
 <li>Select storage device and device type = Raspberry Pi 2/3</li>
 <li>Select ISO image and Windows Pro build</li>
@@ -1068,15 +1072,22 @@
 <li>Wait for the Windows offline install to complete</li>
 <li>Click Finish </li>
 </ul>
+</li>
+</ul>
 <h2 id="windows-setup"><strong>Windows Setup</strong><a class="headerlink" href="#windows-setup" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Install NVMe drive into the bottom of your OPi5</li>
 <li>Power-on OPi5</li>
-<li>Wait 30+ minutes for Windows to finish setup</li>
-</ul>
+<li>
+<p>Wait for Windows to finish setup. Typically 30+ minutes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>System may be slow while .NET optimization runs </p>
-<ul>
-<li>Disable Windows Search service</li>
+</div>
+</li>
+<li>
+<p>Disable Windows Search service</p>
+</li>
 <li>Disable Print Spooler service</li>
 <li>Uninstall all unused apps</li>
 <li>Open Microsoft Store and update all. Might need to be run multiple times</li>
@@ -1085,12 +1096,14 @@
 </ul>
 <h2 id="installing-and-configuring-hyper-v"><strong>Installing and Configuring Hyper-V</strong><a class="headerlink" href="#installing-and-configuring-hyper-v" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Create C:\Hyper-V folder</li>
-<li>Open Control Panel &gt; Uninstall a program &gt; Turn Windows features on or off</li>
+<li>Create <code>C:\Hyper-V</code> folder</li>
+<li>Open Control Panel &gt; Uninstall a program &gt; Turn Windows features on or off<ul>
 <li>Check Hyper-V</li>
 <li>Uncheck Windows PowerShell 2.0</li>
 <li>Uncheck Work Folder Client</li>
 <li>Click OK</li>
+</ul>
+</li>
 <li>Configure Hyper-V Settings</li>
 <li>Configure Hyper-V external virtual switch</li>
 </ul>
