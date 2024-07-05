@@ -21,6 +21,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.thetechguy.com/psadt/support/</loc>
+         <lastmod>2024-07-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.thetechguy.com/psadt/training/</loc>
+         <lastmod>2024-07-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.thetechguy.com/windows/</loc>
          <lastmod>2024-07-05</lastmod>
          <changefreq>daily</changefreq>
