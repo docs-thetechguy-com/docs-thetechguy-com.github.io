@@ -3,7 +3,10 @@ author:
   - Brian Knackstedt
 Date: 2024-06-30
 ---
+<div style="text-align: right"> last updated: {{ git_revision_date_localized }} </div>
+
 # Windows 11 ARM on OPi5
+
 This guide describes how to install the latest Windows 11 ARM image on an Orange Pi 5.
 
 ## **Hardware Requirements**

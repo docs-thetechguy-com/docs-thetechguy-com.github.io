@@ -3,6 +3,8 @@ author:
    - Brian Knackstedt
 Date: 2024-06-30
 ---
+<div style="text-align: right"> last updated: {{ git_revision_date_localized }} </div>
+
 # What is PSAppDeployToolkit?
 
 The PSAppDeployToolkit (PSADT) provides a set of functions to perform common application deployment tasks and to interact with the user during a deployment. It simplifies the complex scripting challenges of deploying applications in the enterprise, provides a consistent deployment experience and improves installation success rates.<sup>[[1]]</sup>

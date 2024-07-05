@@ -21,7 +21,7 @@
 
 # Project information
 site_name: TheTechGuy Docs
-site_url: https://docs-thetechguy-com.github.io
+site_url: https://docs.thetechguy.com
 
 # Repository
 repo_url: https://github.com/docs-thetechguy-com/docs-thetechguy-com.github.io
@@ -94,9 +94,15 @@ plugins:
   # - blog
   - social
   - search
+
+  # https://github.com/timvink/mkdocs-git-authors-plugin
+  - git-authors
+  # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
   - git-revision-date-localized:
-      enabled: !ENV [CI, false]
-      type: date
+      timezone: America/Chicago
+      type: timeago
+      exclude:
+        - index.md
 
 # Hooks
 
@@ -112,10 +118,10 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/docs-thetechguy-com
-    - icon: simple/youtube
-      link: https://www.youtube.com/@TheTechGuy86
     - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/TheTechGuy86
+    - icon: simple/youtube
+      link: https://www.youtube.com/@TheTechGuy86
   consent:
     title: Cookie consent
     description: >-
@@ -129,6 +135,7 @@ markdown_extensions:
   - admonition
   - attr_list
   - footnotes
+  - meta
   - md_in_html
   - toc:
       permalink: true
