@@ -1,2 +1,6 @@
+---
+hide:
+  - actions
+---
 # Blog
 

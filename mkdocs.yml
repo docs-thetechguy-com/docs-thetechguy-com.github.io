@@ -18,6 +18,9 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
+# Notes
+# Markdown Reference: https://daringfireball.net/projects/markdown/syntax
+# Publish to GitHub pages: mkdocs gh-deploy --force
 
 # Project information
 site_name: TheTechGuy Docs
@@ -96,19 +99,41 @@ plugins:
   - search
 
   # https://github.com/timvink/mkdocs-git-authors-plugin
-  - git-authors
+  - git-authors:
+      show_email_address: false
+      sort_authors_by: contribution
+      exclude:
+        - index.md
+        - about.md
   # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
   - git-revision-date-localized:
       timezone: America/Chicago
       type: timeago
       exclude:
         - index.md
+        - about.md
 
 # Hooks
 
 
 # Additional configuration
 extra:
+  analytics:
+    provider: google
+    property: G-C1N8VZ5QSC
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page.
   topnav_items:
     - Product directory
     - About
@@ -164,9 +189,11 @@ nav:
 
 - PSAppDeployToolkit:
   - psadt/index.md
+  - psadt/training.md
+  - psadt/support.md
   - Repository: https://github.com/docs-thetechguy-com/psadt/tree/main/repository
 - Windows:
-  - windows/windows11-arm/windows11arm-on-opi5.md
+  - Windows 11 ARM on OPi5: windows/windows11-arm/windows11arm-on-opi5.md
 
 #not_in_nav:|
 #  index.md
