@@ -1,2 +1,2 @@
 # docs
-Source repository for docs.thetechguy.com
+Source branch for docs.thetechguy.com
