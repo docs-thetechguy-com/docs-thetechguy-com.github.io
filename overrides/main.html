@@ -20,29 +20,33 @@
   IN THE SOFTWARE.
 -->
 
-<!-- Customize top navigation bar. Only display items in the mkdoc.yml extra.topnav_items list -->
+{% extends "base.html" %}
 
-{% import "partials/tabs-item.html" as item with context %}
+<!-- Render hero under tabs -->
+{% block tabs %}
+  {{ super() }}
 
-<!-- Navigation tabs -->
-<nav
-  class="md-tabs"
-  aria-label="{{ lang.t('tabs') }}"
-  data-md-component="tabs"
->
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      {% for nav_item in nav %}
+  <!-- Additional styles for landing page -->
+  <style>
 
-       <!-- Uncomment to debug title name -->
-       <!-- <h1>{{nav_item}}</h1> -->
-       <!-- <h1>{{config.extra.topnav_items}}</h1> -->
+    /* Application header should be static for the landing page */
+    .md-header {
+      position: initial;
+    }
 
-        {% if nav_item.title in config.extra.topnav_items %}
-          {{ item.render(nav_item) }}
-        {% endif%}
+    /* Hide table of contents */
+    @media screen and (min-width: 60em) {
+      .md-sidebar--secondary {
+        display: none;
+      }
+    }
 
-      {% endfor %}
-    </ul>
-  </div>
-</nav>
+    /* Hide navigation */
+    @media screen and (min-width: 76.25em) {
+      .md-sidebar--primary {
+        display: none;
+      }
+    }
+  </style>
+
+ {% endblock %}

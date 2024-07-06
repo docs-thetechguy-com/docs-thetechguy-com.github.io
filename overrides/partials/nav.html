@@ -20,6 +20,9 @@
   IN THE SOFTWARE.
 -->
 
+<!-- Customize side navigation bar. Only display items in the mkdoc.yml extra.topnav_items list -->
+
+
 {% import "partials/nav-item.html" as item with context %}
 
 <!-- Determine classes -->
@@ -63,10 +66,10 @@
   <ul class="md-nav__list" data-md-scrollfix>
     {% for nav_item in nav %}
 
-      {% if nav_item.title not in config.extra.topnav_items %}
+      {% if nav_item.title in config.extra.topnav_items %}
         {% set path = "__nav_" ~ loop.index %}
         {{ item.render(nav_item, path, 1) }}
-      {% endif%}
+      {% endif %}
 
     {% endfor %}
   </ul>
