@@ -942,7 +942,7 @@
 <h2 id="generate-windows-iso"><strong>Generate Windows ISO</strong><a class="headerlink" href="#generate-windows-iso" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Run <code>uup_download_windows.cmd</code></li>
-<li>Wait for files to be downloaded, processed, and ISO generated. Typically 60-minutes.</li>
+<li>Wait for files to be downloaded, processed, and ISO generated. Takes ~60-minutes.</li>
 </ul>
 <h2 id="install-windows-onto-nvme-drive"><strong>Install Windows onto NVMe Drive</strong><a class="headerlink" href="#install-windows-onto-nvme-drive" title="Permanent link">&para;</a></h2>
 <ul>
@@ -964,7 +964,7 @@
 <li>For UEFI firmware, leave use the latest firmware. This doesn't really apply to OPi5.</li>
 <li>Leave defaults for configuration</li>
 <li>Click Install</li>
-<li>Wait for the Windows offline install to complete</li>
+<li>Wait for the Windows offline install to complete. Takes ~5 minutes</li>
 <li>Click Finish </li>
 </ul>
 </li>
@@ -974,20 +974,23 @@
 <li>Install NVMe drive into the bottom of your OPi5</li>
 <li>Power-on OPi5</li>
 <li>
-<p>Wait for Windows to finish setup. Typically 30+ minutes.</p>
+<p>Wait for Windows to finish setup. Takes 30+ minutes.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>System may be slow while .NET optimization runs </p>
+<p>System may be slow while .NET Optimization runs </p>
 </div>
 </li>
 <li>
-<p>Disable Windows Search service</p>
+<p>Complete the OOBE process</p>
 </li>
+<li>Set time zone</li>
+<li>Disable Windows Search service</li>
 <li>Disable Print Spooler service</li>
 <li>Uninstall all unused apps</li>
 <li>Open Microsoft Store and update all. Might need to be run multiple times</li>
 <li>Configure and run Windows Updates</li>
-<li>Rename device </li>
+<li>Rename device</li>
+<li>Join domain</li>
 </ul>
 <h2 id="installing-and-configuring-hyper-v"><strong>Installing and Configuring Hyper-V</strong><a class="headerlink" href="#installing-and-configuring-hyper-v" title="Permanent link">&para;</a></h2>
 <ul>
