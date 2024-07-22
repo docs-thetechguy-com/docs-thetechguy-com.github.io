@@ -702,6 +702,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#thank-you" class="md-nav__link">
     <span class="md-ellipsis">
       Thank you
@@ -787,7 +796,7 @@
 <div style="text-align: right"> last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-05T00:00:29-05:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-05</span> </div>
 
 <h1 id="windows-11-arm-on-opi5">Windows 11 ARM on OPi5<a class="headerlink" href="#windows-11-arm-on-opi5" title="Permanent link">&para;</a></h1>
-<p>This guide describes how to install the latest Windows 11 ARM image on an Orange Pi 5.</p>
+<p>This guide describes how to install the latest Windows 11 ARM image on an Orange Pi 5. Keep in mind this is still in development and individual results may vary.</p>
 <p><center></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qpqhxOXO4D4?si=tOYdRPV1eDemUZvB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <p></center></p>
@@ -899,9 +908,15 @@
 <h2 id="download-drivers"><strong>Download Drivers</strong><a class="headerlink" href="#download-drivers" title="Permanent link">&para;</a></h2>
 <p>Driver download posts are pinned in the #development discord channel</p>
 <ul>
-<li>Download and extract <a href="https://discord.com/channels/1082772881735438346/1082848823233216532/1236925998696763392">RK3588 signed drivers</a></li>
-<li>Download updated <a href="https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage">storage driver (pdb, inf, and sys)</a></li>
-<li>Download updated <a href="https://github.com/worproject/Rockchip-Windows-Drivers/tree/master/drivers/usb/usbehci_nointerlocked">USB driver (inf and sys)</a></li>
+<li>Download and extract RK3588 signed drivers<ul>
+<li><a href="https://github.com/worproject/Rockchip-Windows-Drivers/actions/workflows/build.yml?query=branch%3Amaster">Current build</a></li>
+<li><a href="https://discord.com/channels/1082772881735438346/1082848823233216532/1236925998696763392">Stable build</a></li>
+</ul>
+</li>
+<li>Download updated storage driver (pdb, inf, and sys)<ul>
+<li><a href="https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage">Current build</a></li>
+</ul>
+</li>
 <li>Add updated drivers to rk3588_drivers ZIP file</li>
 </ul>
 <h2 id="download-windows-11-arm64-release-package"><strong>Download Windows 11 arm64 release package</strong><a class="headerlink" href="#download-windows-11-arm64-release-package" title="Permanent link">&para;</a></h2>
@@ -977,6 +992,10 @@
 <li>
 <p>Complete the OOBE process</p>
 </li>
+</ul>
+<h2 id="issues"><strong>Issues</strong><a class="headerlink" href="#issues" title="Permanent link">&para;</a></h2>
+<ul>
+<li>When booting the loading circle locks up and Windows never loads. After a few power cycles it clears.</li>
 </ul>
 <h2 id="thank-you"><strong>Thank you</strong><a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
 <p>This guide wouldn't have been possible without Mario Bălănică, the developers, and the community that supports the Windows on R project.</p>
