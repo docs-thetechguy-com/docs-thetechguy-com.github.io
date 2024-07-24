@@ -124,26 +124,71 @@
     </div>
     
     
-      
+      <!--
+  Copyright (c) 2016-2024 Martin Donath <martin.donath@squidfunk.com>
 
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- This override has been added to allow the site_name to be linked to homepage url -->
+
+<!-- Determine classes -->
+
+
+
+<!-- Header -->
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="TheTechGuy Docs" class="md-header__button md-logo" aria-label="TheTechGuy Docs" data-md-component="logo">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../../.."
+      title="TheTechGuy Docs"
+      class="md-header__button md-logo"
+      aria-label="TheTechGuy Docs"
+      data-md-component="logo"
+    >
       
   <img src="../../../assets/logo.svg" alt="logo">
 
     </a>
+
+    <!-- Button to open drawer -->
     <label class="md-header__button md-icon" for="__drawer">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
+
+    <!-- Header title -->
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            TheTechGuy Docs
-          </span>
-        </div>
+
+	    <a 
+	      href="../../.." class="md-header__topic">
+	      <span class="md-ellipsis">
+                TheTechGuy Docs
+  	      </span>
+            </a>
+
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
@@ -153,6 +198,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Color palette toggle -->
     
       
         <form class="md-header__option" data-md-component="palette">
@@ -190,15 +237,23 @@
 </form>
       
     
+
+    <!-- User preference: color palette -->
     
       <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
+
+    <!-- Site language selector -->
     
+
+    <!-- Button to open search modal -->
     
       <label class="md-header__button md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
+
+      <!-- Search interface -->
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -239,6 +294,8 @@
   </div>
 </div>
     
+
+    <!-- Repository information -->
     
       <div class="md-header__source">
         <a href="https://github.com/docs-thetechguy-com/docs-thetechguy-com.github.io" title="Go to repository" class="md-source" data-md-component="source">
@@ -253,6 +310,8 @@
       </div>
     
   </nav>
+
+  <!-- Navigation tabs (sticky) -->
   
 </header>
     
@@ -531,6 +590,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Install HAOS on Hyper-V
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -540,6 +610,79 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-haos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download HAOS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-vmdk-to-vhdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert VMDK to VHDX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create virtual machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-home-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch Home Assistant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-hacs-home-assistant-community-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install HACS (Home Assistant Community Store)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Integration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -787,6 +930,68 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#download-haos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download HAOS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-vmdk-to-vhdx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert VMDK to VHDX
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-virtual-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create virtual machine
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-home-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch Home Assistant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-hacs-home-assistant-community-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install HACS (Home Assistant Community Store)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add Integration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -863,46 +1068,62 @@
 
 <h1 id="install-home-assistant-os-on-hyper-v">Install Home Assistant OS on Hyper-V<a class="headerlink" href="#install-home-assistant-os-on-hyper-v" title="Permanent link">&para;</a></h1>
 <p>This guide describes how to install the latest Home Assistant OS on Hyper-V.</p>
-<h1 id="download-haos">Download HAOS<a class="headerlink" href="#download-haos" title="Permanent link">&para;</a></h1>
+<h2 id="download-haos"><strong>Download HAOS</strong><a class="headerlink" href="#download-haos" title="Permanent link">&para;</a></h2>
 <ul>
-<li>https://github.com/home-assistant/operating-system/releases</li>
-<li>haos_generic-aarch64.vmdk.zip</li>
-<li>Extract zip file</li>
+<li>Open <a href="https://github.com/home-assistant/operating-system/releases">HAOS release</a></li>
+<li>Scroll-down and download <code>haos_generic-aarch64-&lt;version&gt;.vmdk.zip</code></li>
+<li>Extract ZIP file</li>
 </ul>
-<h1 id="convert-vmdk-to-vhdx">Convert vmdk to vhdx<a class="headerlink" href="#convert-vmdk-to-vhdx" title="Permanent link">&para;</a></h1>
-<p>Reference: https://gist.github.com/rahilwazir/69a750b70348459875cbf40935af02cb
-- Download and install http://download.microsoft.com/download/9/1/E/91E9F42C-3F1F-4AD9-92B7-8DD65DA3B0C2/mvmc_setup.msi
-- Open Powershell as administrator and run Import-Module 'C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1'
-- ConvertTo-MvmcVirtualHardDisk -SourceLiteralPath 'C:\Hyper-V\haos_generic-aarch64-12.3.vmdk' -VhdType DynamicHardDisk -VhdFormat vhdx -destination 'C:\Hyper-V\HA01\Virtual Hard Disks'
-- Wait several minutes for conversion to complete</p>
-<h1 id="create-virtual-machine">Create virtual machine<a class="headerlink" href="#create-virtual-machine" title="Permanent link">&para;</a></h1>
-<h2 id="recommended-hardware">Recommended Hardware<a class="headerlink" href="#recommended-hardware" title="Permanent link">&para;</a></h2>
+<h2 id="convert-vmdk-to-vhdx"><strong>Convert VMDK to VHDX</strong><a class="headerlink" href="#convert-vmdk-to-vhdx" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Download and install <a href="http://download.microsoft.com/download/9/1/E/91E9F42C-3F1F-4AD9-92B7-8DD65DA3B0C2/mvmc_setup.msi">Microsoft Virtual Machine Converter</a></li>
+<li>
+<p>Open Powershell as an Administrator</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Import-Module</span> <span class="s1">&#39;C:\Program Files\Microsoft Virtual Machine Converter\MvmcCmdlet.psd1&#39;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">ConvertTo-MvmcVirtualHardDisk</span> <span class="n">-SourceLiteralPath</span> <span class="s1">&#39;C:\Temp\haos_generic-aarch64-12.3.vmdk&#39;</span> <span class="n">-Destination</span> <span class="s1">&#39;C:\Temp&#39;</span> <span class="n">-VhdType</span> <span class="n">DynamicHardDisk</span> <span class="n">-VhdFormat</span> <span class="n">vhdx</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>Wait several minutes for the conversion to complete</p>
+</li>
+</ul>
+<h2 id="create-virtual-machine"><strong>Create virtual machine</strong><a class="headerlink" href="#create-virtual-machine" title="Permanent link">&para;</a></h2>
+<p><strong>Recommended Hardware</strong></p>
 <ul>
 <li>2 CPUs</li>
 <li>2048 MB memory</li>
-<li>Disk: Move haos_generic-aarch64.vhdx to Virtual Hard Disks folder and select</li>
+<li>Disk: Move <code>haos_generic-aarch64.vhdx</code> under <code>Virtual Hard Disks</code> folder and select existing</li>
 </ul>
-<h1 id="launch-home-assistant">Launch Home Assistant<a class="headerlink" href="#launch-home-assistant" title="Permanent link">&para;</a></h1>
+<h2 id="launch-home-assistant"><strong>Launch Home Assistant</strong><a class="headerlink" href="#launch-home-assistant" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Start Virtual Machine</li>
-<li>Open http://homeassistant.local:8123</li>
+<li>Open <code>http://homeassistant.local:8123</code></li>
 </ul>
-<h1 id="install-hacs">Install HACS<a class="headerlink" href="#install-hacs" title="Permanent link">&para;</a></h1>
-<p>Reference: https://hacs.xyz/docs/setup/download
-- Install SSH add-on
-- Set password
-- Start SSH service
-- Run: wget -O - https://get.hacs.xyz | bash -
-- Navigate to Settings &gt; Devices &amp; Services &gt; Integrations
-- Clear browser cache
-- Hard reload browser using Shift-Refresh
-- Click on + Add Integration
-- Search for HACS and install
-- Follow on-screen instructions</p>
-<h1 id="add-integration">Add Integration<a class="headerlink" href="#add-integration" title="Permanent link">&para;</a></h1>
-<h2 id="smartthinq-lg">SmartThinQ LG<a class="headerlink" href="#smartthinq-lg" title="Permanent link">&para;</a></h2>
-<p>Reference: https://github.com/ollo69/ha-smartthinq-sensors
-- Go to the Integration tab and search the "SmartThinQ LGE Sensors" component</p>
+<h2 id="install-hacs-home-assistant-community-store"><strong>Install HACS (Home Assistant Community Store)</strong><a class="headerlink" href="#install-hacs-home-assistant-community-store" title="Permanent link">&para;</a></h2>
+<p><a href="https://hacs.xyz/docs/setup/download">Reference</a></p>
+<ul>
+<li>Install SSH add-on</li>
+<li>Set password</li>
+<li>Start SSH service</li>
+<li>Run <code>wget -O - https://get.hacs.xyz | bash -</code></li>
+<li>Navigate to Settings &gt; Devices &amp; Services &gt; Integrations</li>
+<li>Clear browser cache</li>
+<li>Hard reload browser using Shift-Refresh</li>
+<li>Click on + Add Integration</li>
+<li>Search for HACS and install</li>
+<li>Follow on-screen instructions</li>
+</ul>
+<h2 id="add-integration"><strong>Add Integration</strong><a class="headerlink" href="#add-integration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://github.com/ollo69/ha-smartthinq-sensors">LG ThinQ Devices integration</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Go to the Integration tab and search the "SmartThinQ LGE Sensors" component</p>
+</div>
+</li>
+</ul>
 
 
 
