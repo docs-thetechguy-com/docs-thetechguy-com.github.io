@@ -1,5 +1,7 @@
 ---
 hide:
+  - navigation
+  - toc
   - footer
   - feedback
   - actions

@@ -51,7 +51,7 @@ theme:
     # - navigation.expand
     # - navigation.footer
     - navigation.indexes
-    # - navigation.instant
+    - navigation.instant
     # - navigation.instant.prefetch
     - navigation.instant.progress
     # - navigation.prune
@@ -59,6 +59,7 @@ theme:
     - navigation.tabs
     # - navigation.tabs.sticky
     - navigation.top
+    # - navigation.path
     - navigation.tracking
     - search.highlight
     - search.share
@@ -187,12 +188,16 @@ nav:
 # - Blog: /blog/index.md
 - About: about.md
 
+- Home Automation:
+  - homeautomation/index.md
+  - Install HAOS on Hyper-V: homeautomation/haos/install-haos-on-hyperv.md
 - PSAppDeployToolkit:
   - psadt/index.md
   - psadt/training.md
   - psadt/support.md
   - Repository: https://github.com/docs-thetechguy-com/psadt/tree/main/repository
 - Windows:
+  - windows/index.md
   - Windows 11 ARM on OPi5: windows/windows11-arm/windows11arm-on-opi5.md
 
 #not_in_nav:|
