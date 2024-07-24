@@ -2,42 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.thetechguy.com/</loc>
-         <lastmod>2024-07-22</lastmod>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.thetechguy.com/about/</loc>
-         <lastmod>2024-07-22</lastmod>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.thetechguy.com/blog/</loc>
-         <lastmod>2024-07-22</lastmod>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.thetechguy.com/homeautomation/</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.thetechguy.com/homeautomation/haos/install-haos-on-hyperv/</loc>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.thetechguy.com/psadt/</loc>
-         <lastmod>2024-07-22</lastmod>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.thetechguy.com/psadt/support/</loc>
-         <lastmod>2024-07-22</lastmod>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.thetechguy.com/psadt/training/</loc>
-         <lastmod>2024-07-22</lastmod>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.thetechguy.com/windows/</loc>
-         <lastmod>2024-07-22</lastmod>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.thetechguy.com/windows/windows11-arm/windows11arm-on-opi5/</loc>
-         <lastmod>2024-07-22</lastmod>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
