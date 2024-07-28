@@ -166,8 +166,12 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
+
+  # https://facelessuser.github.io/pymdown-extensions/
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.blocks.tab:
+      alternate_style: true
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -176,7 +180,9 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.keys  
   - pymdownx.inlinehilite
+  - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.snippets
   - pymdownx.superfences
@@ -194,6 +200,25 @@ nav:
   - Install HAOS on Hyper-V: homeautomation/haos/install-haos-on-hyperv.md
 - Intune:
   - intune/index.md
+  - Prerequisites: intune/prerequisites.md
+  - Windows client deployment: intune/windows-client-deployment.md
+  - Windows Autopilot: intune/windows-autopilot.md
+  - Device enrollment: intune/device-enrollment.md
+  - Compliance: intune/compliance-policies.md
+  - Configuration: intune/configuration-profiles.md
+  - Updates: intune/updates.md
+  - Apps: intune/apps.md
+  - User authentication: intune/user-authentication.md
+  - Endpoint Security: intune/endpoint-security.md
+  - Policy sets: intune/policy-sets.md
+  - App protection: intune/app-protection.md
+  - App configuration: intune/app-configuration.md
+  - Device Actions: intune/device-actions.md
+  - Remote management: intune/remote-management.md
+  - Monitoring and reporting: intune/monitoring-and-reporting.md
+  - Access controls: intune/RBAC.md
+  - Windows 365: intune/windows-365.md
+  - Intune Suite: intune/intune-suite.md
 - PSAppDeployToolkit:
   - psadt/index.md
   - psadt/training.md
