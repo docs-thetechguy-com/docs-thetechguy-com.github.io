@@ -15,7 +15,7 @@ Explore guides and articles by product
 <!-- Logos: https://logos.fandom.com/ -->
 
 - <img src="assets/logos/microsoft-exam.svg" alt="logo_microsoft-exam" width="50" /> <sup><sup><font size = "6">[Certifications](certifications/index.md)</font></sup></sup>
-<br>| [MD-102](certificates/md-102/index.md) |
+<br>| [MD-102](certifications/md-102/index.md) |
 
 - <img src="assets/logos/homeassistant.svg" alt="logo_homeassistant" width="50" /> <sup><sup><font size = "6">[Home Automation](homeautomation/index.md)</font></sup></sup>
 <br>| [HAOS on Hyper-V](homeautomation/haos/install-haos-on-hyperv.md) |
