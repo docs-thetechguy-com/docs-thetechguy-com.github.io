@@ -223,7 +223,7 @@ nav:
   - psadt/index.md
   - psadt/training.md
   - psadt/support.md
-  - Repository: https://github.com/docs-thetechguy-com/psadt/tree/main/repository
+  - Repository: https://github.com/docs-thetechguy-com/repository
 - Windows:
   - windows/index.md
   - Windows 11 ARM on OPi5: windows/windows11-arm/windows11arm-on-opi5.md
