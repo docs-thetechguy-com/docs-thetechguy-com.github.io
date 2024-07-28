@@ -98,6 +98,7 @@ plugins:
   # - blog
   - social
   - search
+  - open-in-new-tab
 
   # https://github.com/timvink/mkdocs-git-authors-plugin
   - git-authors:
@@ -188,16 +189,11 @@ nav:
 # - Blog: /blog/index.md
 - About: about.md
 
-- Certifications:
-  - certifications/index.md
-  - MD-102: certifications/md-102/index.md
-    - Deploy Windows client: certifications/md-102/deploy-windows-client.md
-    - Manage identity and compliance: certifications/md-102/manage-identity-and-compliance.md
-    - Manage, maintain, and protect devices: certifications/md-102/manage-maintain-and-protect-devices.md
-    - Manage applications: certifications/md-102/manage-applications.md
 - Home Automation:
   - homeautomation/index.md
   - Install HAOS on Hyper-V: homeautomation/haos/install-haos-on-hyperv.md
+- Intune:
+  - intune/index.md
 - PSAppDeployToolkit:
   - psadt/index.md
   - psadt/training.md

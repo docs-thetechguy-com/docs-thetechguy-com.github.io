@@ -20,6 +20,10 @@ is made of code, scripts, and gadgets that may or may not have a mind of their o
 
 	- [mkdocs-git-revision-date-localized-plugin](https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/index.html)
 
+-[Kuba Andrýsek](https://github.com/JakubAndrysek) for teh following MkDocs plugin:
+
+	- [mkdocs-open-in-new-tab](https://github.com/JakubAndrysek/mkdocs-open-in-new-tab)
+
 - [How to override templates by Ben](https://github.com/squidfunk/mkdocs-material/discussions/3406)
 
 - [Material for MkDocs Community](https://github.com/squidfunk/mkdocs-material/discussions)
