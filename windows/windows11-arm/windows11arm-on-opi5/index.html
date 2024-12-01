@@ -1390,18 +1390,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-windows-onto-nvme-drive" class="md-nav__link">
+  <a href="#install-windows-onto-nvme-drive-using-imager" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Windows onto NVMe Drive
+      Install Windows onto NVMe Drive using Imager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Windows onto NVMe Drive using Imager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows Setup
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#windows-setup" class="md-nav__link">
+  <a href="#install-windows-using-winpe" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows Setup
+      Install Windows using WinPE
     </span>
   </a>
   
@@ -1513,18 +1528,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-windows-onto-nvme-drive" class="md-nav__link">
+  <a href="#install-windows-onto-nvme-drive-using-imager" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Windows onto NVMe Drive
+      Install Windows onto NVMe Drive using Imager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Windows onto NVMe Drive using Imager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows Setup
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#windows-setup" class="md-nav__link">
+  <a href="#install-windows-using-winpe" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows Setup
+      Install Windows using WinPE
     </span>
   </a>
   
@@ -1622,7 +1652,7 @@
 
 
 
-<div style="text-align: right"> last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-01T02:29:57-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-01</span> </div>
+<div style="text-align: right"> last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-01T15:00:46-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-01</span> </div>
 
 <h1 id="windows-11-arm-on-opi5">Windows 11 ARM on OPi5<a class="headerlink" href="#windows-11-arm-on-opi5" title="Permanent link">&para;</a></h1>
 <p>This guide describes how to install the latest Windows 11 ARM image on an Orange Pi 5. Keep in mind this is still in development and individual results may vary.</p>
@@ -1758,11 +1788,14 @@
 <p>Open <a href="https://uupdump.net">uupdump</a></p>
 </li>
 <li>
-<p>Select Windows 11 &gt; 23H2 &gt; latest arm64 build. Newer builds of Windows, such as 24H2, are not support with imager.</p>
+<p>Imager method: From the menu, select Windows 11 &gt; 23H2 &gt; latest arm64 build.</p>
+</li>
+<li>
+<p>WinPE method: Click arm64 button, I typically choose the latest public release build</p>
 <p><img alt="uupdump-arch" src="../assets/uupdump-arch.png" />    </p>
 </li>
 <li>
-<p>Select Windows 11 update</p>
+<p>Select latest Windows 11 update</p>
 <p><img alt="uupdump-update" src="../assets/uupdump-update.png" /></p>
 </li>
 <li>
@@ -1786,10 +1819,10 @@
 <li>Run <code>uup_download_windows.cmd</code></li>
 <li>Wait for files to be downloaded, processed, and ISO generated. Takes ~60-minutes.</li>
 </ul>
-<h2 id="install-windows-onto-nvme-drive"><strong>Install Windows onto NVMe Drive</strong><a class="headerlink" href="#install-windows-onto-nvme-drive" title="Permanent link">&para;</a></h2>
+<h2 id="install-windows-onto-nvme-drive-using-imager"><strong>Install Windows onto NVMe Drive using Imager</strong><a class="headerlink" href="#install-windows-onto-nvme-drive-using-imager" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Download and extract v2.3.1 or later the <a href="https://worproject.com/downloads#windows-on-raspberry-imager">imager</a></p>
+<p>Download and extract v2.3.1 or later of the <a href="https://worproject.com/downloads#windows-on-raspberry-imager">imager</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)</p>
@@ -1811,7 +1844,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="windows-setup"><strong>Windows Setup</strong><a class="headerlink" href="#windows-setup" title="Permanent link">&para;</a></h2>
+<h3 id="windows-setup"><strong>Windows Setup</strong><a class="headerlink" href="#windows-setup" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Install NVMe drive into the bottom of your OPi5</li>
 <li>Power-on OPi5</li>
@@ -1825,6 +1858,38 @@
 <li>
 <p>Complete the OOBE process</p>
 </li>
+</ul>
+<h2 id="install-windows-using-winpe"><strong>Install Windows using WinPE</strong><a class="headerlink" href="#install-windows-using-winpe" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Download and extract v1.1.0 or later of the <a href="https://worproject.com/downloads#windows-on-raspberry-pe-based-installer">PE-based installer</a>
+    !!!note
+        Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)</p>
+</li>
+<li>
+<p>Plug a separate 8+ GB USB drive into your PC (This is for the installation media and not the NVMe drive)</p>
+</li>
+<li>
+<p>Use DiskPart to prepare the partitions. Where <disk number> is the listed number of the external USB hard drive.
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>diskpart
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>list disk
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>select &lt;disk number&gt;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>clean
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>rem === Create the Windows PE partition. ===
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>create partition primary size=1024
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>format quick fs=fat32 label=&quot;Windows PE&quot;
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>assign letter=P
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>active
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>rem === Create a partition for images ===
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>create partition primary
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>format fs=ntfs quick label=&quot;Images&quot;
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>assign letter=I
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>list vol
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>exit
+</span></code></pre></div></p>
+<p><img alt="usb-partition-scheme" src="../assets/usb-partition-scheme.png" /></p>
+</li>
+<li></li>
 </ul>
 <h2 id="known-issues"><strong>Known Issues</strong><a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1857,7 +1922,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-01T02:29:57-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-01T15:00:46-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-01</span>
   </span>
 
     
@@ -1868,11 +1933,11 @@
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contributors">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
       
     </span>
     <nav>
-      TheTechGuy, Not Committed Yet
+      TheTechGuy
     </nav>
   </span>
 
@@ -1949,7 +2014,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2023-2024 TheTechGuy
+      Copyright &copy; 2023-2025 TheTechGuy (Site version 2024.12.01)
     </div>
   
   
@@ -1980,8 +2045,8 @@
       
       
     
-    <a href="https://twitter.com/TheTechGuy86" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
+    <a href="https://bsky.app/profile/thetechguy86.bsky.social" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3zM288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"/></svg>
     </a>
   
     
@@ -1993,6 +2058,17 @@
     
     <a href="https://www.youtube.com/@TheTechGuy86" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.tiktok.com/@thetechguy86" target="_blank" rel="noopener" title="www.tiktok.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121.18 121.18 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"/></svg>
     </a>
   
 </div>
