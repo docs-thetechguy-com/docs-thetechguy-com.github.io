@@ -111,11 +111,12 @@ Driver download posts are pinned in the #development discord channel
 
 - Open [uupdump](https://uupdump.net)
 
-- Select Windows 11 > 23H2 > latest arm64 build. Newer builds of Windows, such as 24H2, are not support with imager.
+- Imager method: From the menu, select Windows 11 > 23H2 > latest arm64 build.
+- WinPE method: Click arm64 button, I typically choose the latest public release build
 	
 	![uupdump-arch](assets/uupdump-arch.png)	
 
-- Select Windows 11 update
+- Select latest Windows 11 update
 
 	![uupdump-update](assets/uupdump-update.png)
 
@@ -134,9 +135,9 @@ Driver download posts are pinned in the #development discord channel
 - Run `uup_download_windows.cmd`
 - Wait for files to be downloaded, processed, and ISO generated. Takes ~60-minutes.
 
-## **Install Windows onto NVMe Drive**
+## **Install Windows onto NVMe Drive using Imager**
 
-- Download and extract v2.3.1 or later the [imager](https://worproject.com/downloads#windows-on-raspberry-imager)
+- Download and extract v2.3.1 or later of the [imager](https://worproject.com/downloads#windows-on-raspberry-imager)
 
 	!!!note
 		Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)
@@ -153,7 +154,7 @@ Driver download posts are pinned in the #development discord channel
 	- Wait for the Windows offline install to complete. Takes ~5 minutes
 	- Click Finish 
 
-## **Windows Setup**
+### **Windows Setup**
 
 - Install NVMe drive into the bottom of your OPi5
 - Power-on OPi5
@@ -163,6 +164,36 @@ Driver download posts are pinned in the #development discord channel
 		System may be slow while .NET Optimization runs 
 
 - Complete the OOBE process
+
+## **Install Windows using WinPE**
+
+- Download and extract v1.1.0 or later of the [PE-based installer](https://worproject.com/downloads#windows-on-raspberry-pe-based-installer)
+	!!!note
+		Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)
+
+- Plug a separate 8+ GB USB drive into your PC (This is for the installation media and not the NVMe drive)
+- Use DiskPart to prepare the partitions. Where <disk number> is the listed number of the external USB hard drive.
+	``` cmd
+	diskpart
+	list disk
+	select <disk number>
+	clean
+	rem === Create the Windows PE partition. ===
+	create partition primary size=1024
+	format quick fs=fat32 label="Windows PE"
+	assign letter=P
+	active
+	rem === Create a partition for images ===
+	create partition primary
+	format fs=ntfs quick label="Images"
+	assign letter=I
+	list vol
+	exit
+	```
+
+	![usb-partition-scheme](assets/usb-partition-scheme.png)
+
+- 
 
 ## **Known Issues**
 
