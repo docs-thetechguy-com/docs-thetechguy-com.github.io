@@ -172,8 +172,8 @@ Driver download posts are pinned in the #development discord channel
 		Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)
 
 - Plug a separate 8+ GB USB drive into your PC (This is for the installation media and not the NVMe drive)
-- Use DiskPart to prepare the partitions. Where /<disk number/> is the listed number of the external USB hard drive.
-	``` batch
+- Use DiskPart to prepare the partitions. Where `<disk number>` is the listed number of the external USB hard drive.
+	``` text
 	diskpart
 	list disk
 	select <disk number>
