@@ -1721,7 +1721,7 @@
 <p><img alt="MaskKey" src="../assets/OPi5-MaskKey.png" /></p>
 </li>
 <li>
-<p>Status in RKDevTool should change from No Devices Found to Found One MASKROM Device</p>
+<p>Status in RKDevTool should change from "No Devices Found" to "Found One MASKROM Device"</p>
 </li>
 <li>
 <p>Click Run</p>
@@ -1741,7 +1741,7 @@
 <p>Driver download posts are pinned in the #development discord channel</p>
 <ul>
 <li>Download and extract RK3588 signed drivers<ul>
-<li><a href="https://github.com/worproject/Rockchip-Windows-Drivers/actions/workflows/build.yml?query=branch%3Amaster">Current build</a></li>
+<li><a href="https://github.com/worproject/Rockchip-Windows-Drivers/actions/workflows/build.yml?query=branch%3Amaster">Current build (Downloads expire after 90 days)</a></li>
 <li><a href="https://discord.com/channels/1082772881735438346/1082848823233216532/1236925998696763392">Stable build</a></li>
 </ul>
 </li>
@@ -1749,7 +1749,8 @@
 <li><a href="https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage">Current build</a></li>
 </ul>
 </li>
-<li>Add updated drivers to rk3588_drivers ZIP file</li>
+<li>Remove _ncc from file names (example rename stornvme_ncc.sys to stornvme.sys)</li>
+<li>Add updated drivers to rk3588_drivers-v2.zip file</li>
 </ul>
 <h2 id="download-windows-11-arm64-release-package"><strong>Download Windows 11 arm64 release package</strong><a class="headerlink" href="#download-windows-11-arm64-release-package" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1788,7 +1789,7 @@
 <h2 id="install-windows-onto-nvme-drive"><strong>Install Windows onto NVMe Drive</strong><a class="headerlink" href="#install-windows-onto-nvme-drive" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Download and extract <a href="https://worproject.com/downloads#windows-on-raspberry-imager">imager</a></p>
+<p>Download and extract v2.3.1 or later <a href="https://worproject.com/downloads#windows-on-raspberry-imager">imager</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Ignore that it says Raspberry. This was original built for Raspberry Pi devices, but developer has been extended support to Orange Pi devices)</p>
