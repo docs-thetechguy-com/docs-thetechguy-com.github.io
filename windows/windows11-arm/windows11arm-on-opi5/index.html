@@ -1408,9 +1408,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#issues" class="md-nav__link">
+  <a href="#known-issues" class="md-nav__link">
     <span class="md-ellipsis">
-      Issues
+      Known Issues
     </span>
   </a>
   
@@ -1531,9 +1531,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#issues" class="md-nav__link">
+  <a href="#known-issues" class="md-nav__link">
     <span class="md-ellipsis">
-      Issues
+      Known Issues
     </span>
   </a>
   
@@ -1758,11 +1758,11 @@
 <p>Open <a href="https://uupdump.net">uupdump</a></p>
 </li>
 <li>
-<p>Select arm64 build, I typically choose the latest public release build</p>
+<p>Select Windows 11 &gt; 23H2 &gt; latest arm64 build. Newer builds of Windows, such as 24H2, are not support with imager.</p>
 <p><img alt="uupdump-arch" src="../assets/uupdump-arch.png" />    </p>
 </li>
 <li>
-<p>Select update</p>
+<p>Select Windows 11 update</p>
 <p><img alt="uupdump-update" src="../assets/uupdump-update.png" /></p>
 </li>
 <li>
@@ -1789,10 +1789,10 @@
 <h2 id="install-windows-onto-nvme-drive"><strong>Install Windows onto NVMe Drive</strong><a class="headerlink" href="#install-windows-onto-nvme-drive" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Download and extract v2.3.1 or later <a href="https://worproject.com/downloads#windows-on-raspberry-imager">imager</a></p>
+<p>Download and extract v2.3.1 or later the <a href="https://worproject.com/downloads#windows-on-raspberry-imager">imager</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Ignore that it says Raspberry. This was original built for Raspberry Pi devices, but developer has been extended support to Orange Pi devices)</p>
+<p>Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)</p>
 </div>
 </li>
 <li>
@@ -1826,9 +1826,10 @@
 <p>Complete the OOBE process</p>
 </li>
 </ul>
-<h2 id="issues"><strong>Issues</strong><a class="headerlink" href="#issues" title="Permanent link">&para;</a></h2>
+<h2 id="known-issues"><strong>Known Issues</strong><a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
 <ul>
-<li>When booting the loading circle locks up and Windows never loads. After a few power cycles it clears.</li>
+<li>When booting the loading circle locks up and Windows never loads. After a few power cycles it clears. </li>
+<li>BSOD when booting. This could be a sign that the storage driver (stornvme.sys) has been overwritten by Windows\Windows Update.</li>
 </ul>
 <h2 id="thank-you"><strong>Thank you</strong><a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
 <p>This guide wouldn't have been possible without Mario Bălănică, the developers, and the community that supports the Windows on R project.</p>
