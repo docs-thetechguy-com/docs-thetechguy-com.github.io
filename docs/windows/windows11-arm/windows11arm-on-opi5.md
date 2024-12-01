@@ -25,7 +25,9 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
 
 		As of June 2024, Orange Pi 5 Pro is not supported by this project.
 
-- [Heatsink with fan for Orange 5](https://www.aliexpress.us/item/3256805715590660.html)
+- [CPU low-profile radiator and RGB fan for Orange Pi 5](https://www.aliexpress.us/item/3256805285062643.html)
+
+- [Black DC 5V sleeve dupont 40x40x10mm ball bearing fan](https://www.aliexpress.us/item/3256807362230220.html)
 
 - USB hub ([uni USB C to USB Hub 4 Ports](https://www.amazon.com/gp/product/B08P3GDLVP))
 

@@ -61,21 +61,27 @@ This guide describes how to install the latest Home Assistant OS on Hyper-V.
 
 - [Google Nest](https://www.home-assistant.io/integrations/nest)
 - [Reolink IP NVR/camera](https://www.home-assistant.io/integrations/reolink)
+- [Zigbee2MQTT](https://github.com/zigbee2mqtt/hassio-zigbee2mqtt#installation)
 
 ## Add Automation Hardware
-- [Google Nest Learning Thermostat](https://amzn.to/4c67ZUa)
+- [Google Nest Learning Thermostat 4th Gen](https://amzn.to/4iggz70)
 - [Emporia Smart Home Energy Monitor](https://amzn.to/4fnHD2K)
 - [EMPORIA Smart Plug with Energy Monitoring](https://amzn.to/3LJFiBT)
 - [ratgdo](https://paulwieland.github.io/ratgdo/) - Chamberlain or Liftmaster Opener
-- [meross Smart Light Switch 4](https://amzn.to/4cVTNP2)
+- [meross Smart Light Switch 4 pack](https://amzn.to/4cVTNP2)
 - [meross Smart Ceiling Fan Control and Dimmer Light Switch](https://amzn.to/3WC5hkO)
-- [meross Smart Water Sensor Alarm 3 Pack](https://amzn.to/4bZC8ob)
-- [meross WiFi Thermometer Hygrometer](https://amzn.to/3A2cqCk)
-- [Aqara Presence Sensor FP2](https://amzn.to/3zWttWq)
+
+## Zigbee Hardware
+- [CC2652P2 or CC2652P7 Based Zigbee to PoE Coordinator](https://tubeszb.com)
+- [Tuya Zigbee 3.0 Signal Repeater USB](https://www.aliexpress.us/item/3256804809754261.html)
+- [Amico 6.0A USB 3-Port 30W Wall Outlets](https://amzn.to/3VfvfJQ)
+- [Aqara Temperature and Humidity Sensor](https://www.aliexpress.us/item/3256806607779727.html)
+- [Aqara Water Leakage Sensor](https://www.aliexpress.us/item/3256806421735716.html)
+- [Tuya Soil Temperature and Humidity Sensor](https://www.aliexpress.us/item/3256807143183397.html)
 
 ## Add Security Hardware
 - [REOLINK 4K 8CH Network Video Recorder](https://amzn.to/3WCNYjM)
-- [REOLINK 5GHz WiFi Indoor Camera](https://amzn.to/4cV8TEn)
+- [REOLINK E1 Zoom 360° Indoor Camera](https://amzn.to/4cV8TEn)
 - [REOLINK RLC-1240A 12MP POE 145° wide-angle view](https://amzn.to/3Spbazx)
-- [REOLINK RLC-820A] 8MP POE 87° view](https://amzn.to/46rfvbg)
+- [REOLINK RLC-820A 8MP POE 87° view](https://amzn.to/46rfvbg)
 - [Cudy 8 Port Gigabit PoE Switch](https://amzn.to/4cXgRgh)
