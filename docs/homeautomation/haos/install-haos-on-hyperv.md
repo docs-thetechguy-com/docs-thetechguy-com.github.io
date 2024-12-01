@@ -81,7 +81,7 @@ This guide describes how to install the latest Home Assistant OS on Hyper-V.
 
 ## Add Security Hardware
 - [REOLINK 4K 8CH Network Video Recorder](https://amzn.to/3WCNYjM)
-- [REOLINK E1 Zoom 360° Indoor Camera](https://amzn.to/4cV8TEn)
-- [REOLINK RLC-1240A 12MP POE 145° wide-angle view](https://amzn.to/3Spbazx)
-- [REOLINK RLC-820A 8MP POE 87° view](https://amzn.to/46rfvbg)
+- [REOLINK RLC-1240A 12MP POE 145° wide-angle Camera](https://amzn.to/3Spbazx)
+- [REOLINK RLC-820A 8MP POE 87° Camera](https://amzn.to/46rfvbg)
+- [REOLINK E1 Zoom 5MP 360° Indoor Camera](https://amzn.to/4cV8TEn)
 - [Cudy 8 Port Gigabit PoE Switch](https://amzn.to/4cXgRgh)

@@ -32,7 +32,7 @@ repo_name: Edit me
 edit_uri: blob/main/docs/
 
 # Copyright
-copyright: Copyright &copy; 2023-2024 TheTechGuy
+copyright: Copyright &copy; 2023-2025 TheTechGuy (Site version 2024.12.01)
 
 # Configuration
 theme:
@@ -145,10 +145,12 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/docs-thetechguy-com
-    - icon: fontawesome/brands/x-twitter
-      link: https://twitter.com/TheTechGuy86
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/thetechguy86.bsky.social
     - icon: simple/youtube
       link: https://www.youtube.com/@TheTechGuy86
+    - icon: fontawesome/brands/tiktok
+      link: https://www.tiktok.com/@thetechguy86
   consent:
     title: Cookie consent
     description: >-

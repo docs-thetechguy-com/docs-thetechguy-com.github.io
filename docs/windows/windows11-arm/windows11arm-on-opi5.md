@@ -25,9 +25,9 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
 
 		As of June 2024, Orange Pi 5 Pro is not supported by this project.
 
-- [CPU low-profile radiator and RGB fan for Orange Pi 5](https://www.aliexpress.us/item/3256805285062643.html)
+- [RGB fan and low-profile CPU radiator for Orange Pi 5](https://www.aliexpress.us/item/3256805285062643.html)
 
-- [Black DC 5V sleeve dupont 40x40x10mm ball bearing fan](https://www.aliexpress.us/item/3256807362230220.html)
+- [Black ball bearing fan - DC 5V sleeve dupont 40x40x10mm](https://www.aliexpress.us/item/3256807362230220.html)
 
 - USB hub ([uni USB C to USB Hub 4 Ports](https://www.amazon.com/gp/product/B08P3GDLVP))
 
@@ -53,16 +53,16 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
 
 **Download**
 
-- Download and extract latest version of [RKDevTool](https://wiki.radxa.com/Rock5/install/rockchip-flash-tools)
+- Download and extract v2.96 or later release of [RKDevTool](https://wiki.radxa.com/Rock5/install/rockchip-flash-tools)
 
-- Download, extract, and install latest version of [Rockchip USB driver](https://wiki.radxa.com/Rock5/install/rockchip-flash-tools)
+- Download, extract, and install latest version of [Rockchip USB driver (RKDriverAssitant)](https://wiki.radxa.com/Rock5/install/rockchip-flash-tools)
 
-- Download and extract latest release image of [EDK2 UEFI firmware](https://github.com/edk2-porting/edk2-rk3588/actions/workflows/release.yml) for orangepi-5 UEFI
+- Download and extract v0.11.2 or later release image of [EDK2 UEFI firmware](https://github.com/edk2-porting/edk2-rk3588/releases) for orangepi-5_UEFI_Release_v#.##.#.img
 
 	!!!note
 		0.9.1 does not support built-in GMAC ethernet, use a newer build.
 
-- Download latest [SPL loader BIN file](https://dl.radxa.com/rock5/sw/images/loader/rock-5b/release)
+- Download v1.15.113 or later release of [SPL loader BIN file](https://dl.radxa.com/rock5/sw/images/loader/rock-5b/release)
 
 **Write firmware**
 
@@ -74,8 +74,8 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
     - Click empty box under … to select file
 
 		!!! note
-			- Rk3588_spl_loader.bin for Loader
-    		- Orangepi-5_UEFI.img for Image
+			- Rk3588_spl_loader_v#.##.###.bin for Loader
+    		- orangepi-5_UEFI_Release_v#.##.#.img for Image
     
     - Check Write by Address
     - Connect OPi5 from USB-C port to PC
@@ -84,7 +84,7 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
 
 	![MaskKey](assets/OPi5-MaskKey.png)
 
-- Status in RKDevTool should change from No Devices Found to Found One MASKROM Device
+- Status in RKDevTool should change from "No Devices Found" to "Found One MASKROM Device"
 
 - Click Run
 
@@ -100,21 +100,22 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
 Driver download posts are pinned in the #development discord channel
 
 - Download and extract RK3588 signed drivers
-	- [Current build](https://github.com/worproject/Rockchip-Windows-Drivers/actions/workflows/build.yml?query=branch%3Amaster)
+	- [Current build (Downloads expire after 90 days)](https://github.com/worproject/Rockchip-Windows-Drivers/actions/workflows/build.yml?query=branch%3Amaster)
 	- [Stable build](https://discord.com/channels/1082772881735438346/1082848823233216532/1236925998696763392)
 - Download updated storage driver (pdb, inf, and sys)
 	- [Current build](https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage)
-- Add updated drivers to rk3588_drivers ZIP file
+- Remove _ncc from file names (example rename stornvme_ncc.sys to stornvme.sys)
+- Add updated drivers to rk3588_drivers-v2.zip file
 
 ## **Download Windows 11 arm64 release package**
 
 - Open [uupdump](https://uupdump.net)
 
-- Select arm64 build, I typically choose the latest public release build
+- Select Windows 11 > 23H2 > latest arm64 build. Newer builds of Windows, such as 24H2, are not support with imager.
 	
 	![uupdump-arch](assets/uupdump-arch.png)	
 
-- Select update
+- Select Windows 11 update
 
 	![uupdump-update](assets/uupdump-update.png)
 
@@ -135,10 +136,10 @@ Driver download posts are pinned in the #development discord channel
 
 ## **Install Windows onto NVMe Drive**
 
-- Download and extract [imager](https://worproject.com/downloads#windows-on-raspberry-imager)
+- Download and extract v2.3.1 or later the [imager](https://worproject.com/downloads#windows-on-raspberry-imager)
 
 	!!!note
-		Ignore that it says Raspberry. This was original built for Raspberry Pi devices, but developer has been extended support to Orange Pi devices)
+		Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)
 
 - Plug the NVMe drive into your PC
 - Run `WoR.exe` as an Administrator
@@ -163,9 +164,10 @@ Driver download posts are pinned in the #development discord channel
 
 - Complete the OOBE process
 
-## **Issues**
+## **Known Issues**
 
-- When booting the loading circle locks up and Windows never loads. After a few power cycles it clears.
+- When booting the loading circle locks up and Windows never loads. After a few power cycles it clears. 
+- BSOD when booting. This could be a sign that the storage driver (stornvme.sys) has been overwritten by Windows\Windows Update.
 
 ## **Thank you**
 
