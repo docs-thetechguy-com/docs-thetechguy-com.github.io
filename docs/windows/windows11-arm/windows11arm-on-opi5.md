@@ -173,7 +173,7 @@ Driver download posts are pinned in the #development discord channel
 
 - Plug a separate 8+ GB USB drive into your PC (This is for the installation media and not the NVMe drive)
 - Use DiskPart to prepare the partitions. Where <disk number> is the listed number of the external USB hard drive.
-	``` cmd
+	``` batch
 	diskpart
 	list disk
 	select <disk number>
