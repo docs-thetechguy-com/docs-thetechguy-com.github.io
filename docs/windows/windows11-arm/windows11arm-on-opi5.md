@@ -1,7 +1,7 @@
 ---
 author: 
   - Brian Knackstedt
-Date: 2024-06-30
+Date: 2024-12-01
 ---
 <div style="text-align: right"> last updated: {{ git_revision_date_localized }} </div>
 
@@ -99,20 +99,25 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
 
 Driver download posts are pinned in the #development discord channel
 
-- Download and extract RK3588 signed drivers
-	- [Current build (Downloads expire after 90 days)](https://github.com/worproject/Rockchip-Windows-Drivers/actions/workflows/build.yml?query=branch%3Amaster)
+- Download RK3588 signed driver zip file (rk3588_drivers-v2.zip)
 	- [Stable build](https://discord.com/channels/1082772881735438346/1082848823233216532/1236925998696763392)
-- Download updated storage driver (pdb, inf, and sys)
-	- [Current build](https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage)
+	- [Release build (Downloads expire after 90 days)](https://github.com/worproject/Rockchip-Windows-Drivers/actions/workflows/build.yml?query=branch%3Amaster)
+
+- Download updated storage driver (pdb, inf, and sys) to a folder named stornvme_storahci
+	- [Release build](https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage)
+
 - Remove _ncc from file names (example rename stornvme_ncc.sys to stornvme.sys)
-- Add updated drivers to rk3588_drivers-v2.zip file
+
+- Edit all inf files in notepad and remove _ncc from file names
+
+- Add stornvme_storahci folder to rk3588_drivers-v2.zip file using 7-Zip
 
 ## **Download Windows 11 arm64 release package**
 
 - Open [uupdump](https://uupdump.net)
 
-- Imager method: From the menu, select Windows 11 > 23H2 > latest arm64 build.
-- WinPE method: Click arm64 button, I typically choose the latest public release build
+- Option 1 (Windows 11 23H2 or earlier) - Imager method: From the menu, select Windows 11 > 23H2 > latest arm64 build.
+- Option 2 (Windows 11 24H2 or later) - WinPE method: Click arm64 button, I typically choose the latest public release build
 	
 	![uupdump-arch](assets/uupdump-arch.png)	
 
@@ -130,12 +135,22 @@ Driver download posts are pinned in the #development discord channel
 
 - Extract package to a folder that does not contain spaces in the path. Example: C:\ISO
 
+- Extract rk3588_drivers-v2.zip to C:\ISO\Drivers\ALL
+
+- Edit C:\ISO\ConvertConfig.ini with Notepad
+
+	``` text
+	AddUpdates   =1
+	AddDrivers   =1
+	```
+
 ## **Generate Windows ISO**
 
 - Run `uup_download_windows.cmd`
+
 - Wait for files to be downloaded, processed, and ISO generated. Takes ~60-minutes.
 
-## **Install Windows onto NVMe Drive using Imager**
+## **Option 1: Install Windows onto NVMe Drive using Imager**
 
 - Download and extract v2.3.1 or later of the [imager](https://worproject.com/downloads#windows-on-raspberry-imager)
 
@@ -165,39 +180,122 @@ Driver download posts are pinned in the #development discord channel
 
 - Complete the OOBE process
 
-## **Install Windows using WinPE**
+## **Option 2: Install Windows 11 24H2 or later using WinPE**
 
 - Download and extract v1.1.0 or later of the [PE-based installer](https://worproject.com/downloads#windows-on-raspberry-pe-based-installer)
+
 	!!!note
 		Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)
 
-- Plug a separate 8+ GB USB drive into your PC (This is for the installation media and not the NVMe drive)
-- Use DiskPart to prepare the partitions. Where `<disk number>` is the listed number of the external USB hard drive.
+- Plug a separate 16+ GB USB drive into your PC (This is for the installation media and not the NVMe drive)
+
+- Download latest [rufus portable](https://rufus.ie/en/#download)
+
+- Open Rufus as an Administrator, verify USB drive was detected, and drag ISO onto Rufus app
+
+- Click Start
+
+- Check both remove requirements and both disable options, then click OK
+
+### **Update Drivers**
+
+- Open command prompt as an Administrator and run:
+
 	``` text
-	diskpart
-	list disk
-	select <disk number>
-	clean
-	rem === Create the Windows PE partition. ===
-	create partition primary size=1024
-	format quick fs=fat32 label="Windows PE"
-	assign letter=P
-	active
-	rem === Create a partition for images ===
-	create partition primary
-	format fs=ntfs quick label="Images"
-	assign letter=I
-	list vol
-	exit
+	md C:\ISO\Offline
+	md C:\ISO\Offline_winre
+	```
+	``` text
+	REM *** Replace stornvme.sys and storahci.sys in boot.wim index 2
+	Dism /Mount-Image /ImageFile:D:\sources\boot.wim /Index:2 /mountDir:C:\ISO\Offline
+
+	takeown /f C:\ISO\Offline\Windows\system32\drivers\stornvme.sys
+	icacls C:\ISO\Offline\Windows\system32\drivers\stornvme.sys /grant %username%:F
+	Ren C:\ISO\Offline\Windows\system32\drivers\stornvme.sys stornvme.sys.orig
+	Copy C:\ISO\drivers\ALL\stornvme_storahci\stornvme.* C:\ISO\Offline\Windows\system32\drivers /Y
+
+	takeown /f C:\ISO\Offline\Windows\system32\drivers\storahci.sys
+	icacls C:\ISO\Offline\Windows\system32\drivers\storahci.sys /grant %username%:F
+	Ren C:\ISO\Offline\Windows\system32\drivers\storahci.sys storahci.sys.orig
+	Copy C:\ISO\drivers\ALL\stornvme_storahci\storahci.* C:\ISO\Offline\Windows\system32\drivers /Y
+
+	Dism /Unmount-Image /mountDir:C:\ISO\Offline /Commit
+	```
+	``` text
+	REM *** Replace stornvme.sys and storahci.sys in install.wim index 1 and winre.wim
+	Dism /Mount-Image /ImageFile:D:\sources\install.wim /Index:1 /mountDir:C:\ISO\Offline
+
+	takeown /f C:\ISO\Offline\Windows\system32\drivers\stornvme.sys
+	icacls C:\ISO\Offline\Windows\system32\drivers\stornvme.sys /grant %username%:F
+	Ren C:\ISO\Offline\Windows\system32\drivers\stornvme.sys stornvme.sys.orig
+	Copy C:\ISO\drivers\ALL\stornvme_storahci\stornvme.* C:\ISO\Offline\Windows\system32\drivers /Y
+
+	takeown /f C:\ISO\Offline\Windows\system32\drivers\storahci.sys
+	icacls C:\ISO\Offline\Windows\system32\drivers\storahci.sys /grant %username%:F
+	Ren C:\ISO\Offline\Windows\system32\drivers\storahci.sys storahci.sys.orig
+	Copy C:\ISO\drivers\ALL\stornvme_storahci\storahci.* C:\ISO\Offline\Windows\system32\drivers /Y
+
+	REM *** Replace stornvme.sys and storahci.sys in winre.wim
+	Dism /Mount-Image /ImageFile:C:\ISO\Offline\windows\system32\recovery\winre.wim /Index:1 /mountDir:C:\ISO\Offline_winre
+	Dism /Add-Driver /Image:C:\ISO\Offline_winre /Driver:C:\ISO\drivers\ALL /Recurse /ForceUnsigned
+	Dism /Unmount-Image /mountDir:C:\ISO\Offline_winre /Commit
+
+	Dism /Cleanup-Image /Image=C:\ISO\Offline /StartComponentCleanup /ResetBase /ScratchDir:C:\Windows\temp
+
+	Dism /Unmount-Image /mountDir:C:\ISO\Offline /Commit
 	```
 
-	![usb-partition-scheme](assets/usb-partition-scheme.png)
+---
+- Set up the boot files
+	```batch
+	BCDboot P:\Windows /s P: /f UEFI
+	```
 
-- 
+
+- Copy UEFI firmware
+	- Download v1.39 or later [UEFI firmware](https://github.com/pftf/RPi3/releases)
+
+	- Extract `RPi3_UEFI_Firmware_v1.39.zip` to P:\
+
+---
+
+### **Windows Setup**
+
+- Install USB drive into USB hub connected to the OPi5
+
+- Power-on OPi5
+
+- Press ESC to get the boot options
+
+- Select Boot Manager > USB
+
+- You should see the orange pi logo and after 30 seconds a Recovery screen will display
+
+- Press F8 > 7 to disable driver signature enforcement
+
+- Wait for WinPE to load
+
+- Select Windows 11 and check I agree everything will be deleted
+
+- Click I don't have a product key
+
+- Delete all Disk 0 partitions
+
+- Select Disk 0 Unallocated Space and click Next
+
+- Summary: Install Windows 11 Pro, Keep nothing
+
+- Click Install
+
+- Wait for Windows to install, after restart you can remove the USB drive
+
+- ***Currently this is not working and just hangs after restart***
+
 
 ## **Known Issues**
 
-- When booting the loading circle locks up and Windows never loads. After a few power cycles it clears. 
+- When booting the loading circle locks up and Windows never loads. After a few power cycles it clears.
+
 - BSOD when booting. This could be a sign that the storage driver (stornvme.sys) has been overwritten by Windows\Windows Update.
 
 ## **Thank you**
