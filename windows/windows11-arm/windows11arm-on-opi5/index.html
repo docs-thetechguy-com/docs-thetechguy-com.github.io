@@ -1390,13 +1390,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-windows-onto-nvme-drive-using-imager" class="md-nav__link">
+  <a href="#option-1-install-windows-onto-nvme-drive-using-imager" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Windows onto NVMe Drive using Imager
+      Option 1: Install Windows onto NVMe Drive using Imager
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Install Windows onto NVMe Drive using Imager">
+    <nav class="md-nav" aria-label="Option 1: Install Windows onto NVMe Drive using Imager">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1414,11 +1414,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-windows-using-winpe" class="md-nav__link">
+  <a href="#option-2-install-windows-11-24h2-or-later-using-winpe" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Windows using WinPE
+      Option 2: Install Windows 11 24H2 or later using WinPE
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Install Windows 11 24H2 or later using WinPE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Drivers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1528,13 +1552,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-windows-onto-nvme-drive-using-imager" class="md-nav__link">
+  <a href="#option-1-install-windows-onto-nvme-drive-using-imager" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Windows onto NVMe Drive using Imager
+      Option 1: Install Windows onto NVMe Drive using Imager
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Install Windows onto NVMe Drive using Imager">
+    <nav class="md-nav" aria-label="Option 1: Install Windows onto NVMe Drive using Imager">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1552,11 +1576,35 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-windows-using-winpe" class="md-nav__link">
+  <a href="#option-2-install-windows-11-24h2-or-later-using-winpe" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Windows using WinPE
+      Option 2: Install Windows 11 24H2 or later using WinPE
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Install Windows 11 24H2 or later using WinPE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update Drivers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1652,7 +1700,7 @@
 
 
 
-<div style="text-align: right"> last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-01T15:12:36-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-01</span> </div>
+<div style="text-align: right"> last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-04T12:12:54-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-04</span> </div>
 
 <h1 id="windows-11-arm-on-opi5">Windows 11 ARM on OPi5<a class="headerlink" href="#windows-11-arm-on-opi5" title="Permanent link">&para;</a></h1>
 <p>This guide describes how to install the latest Windows 11 ARM image on an Orange Pi 5. Keep in mind this is still in development and individual results may vary.</p>
@@ -1770,17 +1818,28 @@
 <h2 id="download-drivers"><strong>Download Drivers</strong><a class="headerlink" href="#download-drivers" title="Permanent link">&para;</a></h2>
 <p>Driver download posts are pinned in the #development discord channel</p>
 <ul>
-<li>Download and extract RK3588 signed drivers<ul>
-<li><a href="https://github.com/worproject/Rockchip-Windows-Drivers/actions/workflows/build.yml?query=branch%3Amaster">Current build (Downloads expire after 90 days)</a></li>
+<li>
+<p>Download RK3588 signed driver zip file (rk3588_drivers-v2.zip)</p>
+<ul>
 <li><a href="https://discord.com/channels/1082772881735438346/1082848823233216532/1236925998696763392">Stable build</a></li>
+<li><a href="https://github.com/worproject/Rockchip-Windows-Drivers/actions/workflows/build.yml?query=branch%3Amaster">Release build (Downloads expire after 90 days)</a></li>
 </ul>
 </li>
-<li>Download updated storage driver (pdb, inf, and sys)<ul>
-<li><a href="https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage">Current build</a></li>
+<li>
+<p>Download updated storage driver (pdb, inf, and sys) to a folder named stornvme_storahci</p>
+<ul>
+<li><a href="https://github.com/worproject/Rockchip-Windows-Drivers/tree/storportDriver/drivers/storage">Release build</a></li>
 </ul>
 </li>
-<li>Remove _ncc from file names (example rename stornvme_ncc.sys to stornvme.sys)</li>
-<li>Add updated drivers to rk3588_drivers-v2.zip file</li>
+<li>
+<p>Remove _ncc from file names (example rename stornvme_ncc.sys to stornvme.sys)</p>
+</li>
+<li>
+<p>Edit all inf files in notepad and remove _ncc from file names</p>
+</li>
+<li>
+<p>Add stornvme_storahci folder to rk3588_drivers-v2.zip file using 7-Zip</p>
+</li>
 </ul>
 <h2 id="download-windows-11-arm64-release-package"><strong>Download Windows 11 arm64 release package</strong><a class="headerlink" href="#download-windows-11-arm64-release-package" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1788,10 +1847,10 @@
 <p>Open <a href="https://uupdump.net">uupdump</a></p>
 </li>
 <li>
-<p>Imager method: From the menu, select Windows 11 &gt; 23H2 &gt; latest arm64 build.</p>
+<p>Option 1 (Windows 11 23H2 or earlier) - Imager method: From the menu, select Windows 11 &gt; 23H2 &gt; latest arm64 build.</p>
 </li>
 <li>
-<p>WinPE method: Click arm64 button, I typically choose the latest public release build</p>
+<p>Option 2 (Windows 11 24H2 or later) - WinPE method: Click arm64 button, I typically choose the latest public release build</p>
 <p><img alt="uupdump-arch" src="../assets/uupdump-arch.png" />    </p>
 </li>
 <li>
@@ -1813,13 +1872,26 @@
 <li>
 <p>Extract package to a folder that does not contain spaces in the path. Example: C:\ISO</p>
 </li>
+<li>
+<p>Extract rk3588_drivers-v2.zip to C:\ISO\Drivers\ALL</p>
+</li>
+<li>
+<p>Edit C:\ISO\ConvertConfig.ini with Notepad</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>AddUpdates   =1
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>AddDrivers   =1
+</span></code></pre></div>
+</li>
 </ul>
 <h2 id="generate-windows-iso"><strong>Generate Windows ISO</strong><a class="headerlink" href="#generate-windows-iso" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Run <code>uup_download_windows.cmd</code></li>
-<li>Wait for files to be downloaded, processed, and ISO generated. Takes ~60-minutes.</li>
+<li>
+<p>Run <code>uup_download_windows.cmd</code></p>
+</li>
+<li>
+<p>Wait for files to be downloaded, processed, and ISO generated. Takes ~60-minutes.</p>
+</li>
 </ul>
-<h2 id="install-windows-onto-nvme-drive-using-imager"><strong>Install Windows onto NVMe Drive using Imager</strong><a class="headerlink" href="#install-windows-onto-nvme-drive-using-imager" title="Permanent link">&para;</a></h2>
+<h2 id="option-1-install-windows-onto-nvme-drive-using-imager"><strong>Option 1: Install Windows onto NVMe Drive using Imager</strong><a class="headerlink" href="#option-1-install-windows-onto-nvme-drive-using-imager" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p>Download and extract v2.3.1 or later of the <a href="https://worproject.com/downloads#windows-on-raspberry-imager">imager</a></p>
@@ -1859,42 +1931,153 @@
 <p>Complete the OOBE process</p>
 </li>
 </ul>
-<h2 id="install-windows-using-winpe"><strong>Install Windows using WinPE</strong><a class="headerlink" href="#install-windows-using-winpe" title="Permanent link">&para;</a></h2>
+<h2 id="option-2-install-windows-11-24h2-or-later-using-winpe"><strong>Option 2: Install Windows 11 24H2 or later using WinPE</strong><a class="headerlink" href="#option-2-install-windows-11-24h2-or-later-using-winpe" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Download and extract v1.1.0 or later of the <a href="https://worproject.com/downloads#windows-on-raspberry-pe-based-installer">PE-based installer</a>
-    !!!note
-        Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)</p>
+<p>Download and extract v1.1.0 or later of the <a href="https://worproject.com/downloads#windows-on-raspberry-pe-based-installer">PE-based installer</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)</p>
+</div>
 </li>
 <li>
-<p>Plug a separate 8+ GB USB drive into your PC (This is for the installation media and not the NVMe drive)</p>
+<p>Plug a separate 16+ GB USB drive into your PC (This is for the installation media and not the NVMe drive)</p>
 </li>
 <li>
-<p>Use DiskPart to prepare the partitions. Where <code>&lt;disk number&gt;</code> is the listed number of the external USB hard drive.
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>diskpart
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>list disk
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>select &lt;disk number&gt;
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>clean
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>rem === Create the Windows PE partition. ===
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>create partition primary size=1024
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>format quick fs=fat32 label=&quot;Windows PE&quot;
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>assign letter=P
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>active
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>rem === Create a partition for images ===
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>create partition primary
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>format fs=ntfs quick label=&quot;Images&quot;
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>assign letter=I
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>list vol
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>exit
+<p>Download latest <a href="https://rufus.ie/en/#download">rufus portable</a></p>
+</li>
+<li>
+<p>Open Rufus as an Administrator, verify USB drive was detected, and drag ISO onto Rufus app</p>
+</li>
+<li>
+<p>Click Start</p>
+</li>
+<li>
+<p>Check both remove requirements and both disable options, then click OK</p>
+</li>
+</ul>
+<h3 id="update-drivers"><strong>Update Drivers</strong><a class="headerlink" href="#update-drivers" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Open command prompt as an Administrator and run:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>md C:\ISO\Offline
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>md C:\ISO\Offline_winre
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>REM *** Replace stornvme.sys and storahci.sys in boot.wim index 2
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Dism /Mount-Image /ImageFile:D:\sources\boot.wim /Index:2 /mountDir:C:\ISO\Offline
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>takeown /f C:\ISO\Offline\Windows\system32\drivers\stornvme.sys
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>icacls C:\ISO\Offline\Windows\system32\drivers\stornvme.sys /grant %username%:F
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Ren C:\ISO\Offline\Windows\system32\drivers\stornvme.sys stornvme.sys.orig
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Copy C:\ISO\drivers\ALL\stornvme_storahci\stornvme.* C:\ISO\Offline\Windows\system32\drivers /Y
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>takeown /f C:\ISO\Offline\Windows\system32\drivers\storahci.sys
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>icacls C:\ISO\Offline\Windows\system32\drivers\storahci.sys /grant %username%:F
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Ren C:\ISO\Offline\Windows\system32\drivers\storahci.sys storahci.sys.orig
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Copy C:\ISO\drivers\ALL\stornvme_storahci\storahci.* C:\ISO\Offline\Windows\system32\drivers /Y
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Dism /Unmount-Image /mountDir:C:\ISO\Offline /Commit
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>REM *** Replace stornvme.sys and storahci.sys in install.wim index 1 and winre.wim
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Dism /Mount-Image /ImageFile:D:\sources\install.wim /Index:1 /mountDir:C:\ISO\Offline
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>takeown /f C:\ISO\Offline\Windows\system32\drivers\stornvme.sys
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>icacls C:\ISO\Offline\Windows\system32\drivers\stornvme.sys /grant %username%:F
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Ren C:\ISO\Offline\Windows\system32\drivers\stornvme.sys stornvme.sys.orig
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Copy C:\ISO\drivers\ALL\stornvme_storahci\stornvme.* C:\ISO\Offline\Windows\system32\drivers /Y
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>takeown /f C:\ISO\Offline\Windows\system32\drivers\storahci.sys
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>icacls C:\ISO\Offline\Windows\system32\drivers\storahci.sys /grant %username%:F
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Ren C:\ISO\Offline\Windows\system32\drivers\storahci.sys storahci.sys.orig
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Copy C:\ISO\drivers\ALL\stornvme_storahci\storahci.* C:\ISO\Offline\Windows\system32\drivers /Y
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>REM *** Replace stornvme.sys and storahci.sys in winre.wim
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Dism /Mount-Image /ImageFile:C:\ISO\Offline\windows\system32\recovery\winre.wim /Index:1 /mountDir:C:\ISO\Offline_winre
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>Dism /Add-Driver /Image:C:\ISO\Offline_winre /Driver:C:\ISO\drivers\ALL /Recurse /ForceUnsigned
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Dism /Unmount-Image /mountDir:C:\ISO\Offline_winre /Commit
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>Dism /Cleanup-Image /Image=C:\ISO\Offline /StartComponentCleanup /ResetBase /ScratchDir:C:\Windows\temp
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>Dism /Unmount-Image /mountDir:C:\ISO\Offline /Commit
 </span></code></pre></div></p>
-<p><img alt="usb-partition-scheme" src="../assets/usb-partition-scheme.png" /></p>
 </li>
-<li></li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>Set up the boot files
+    <div class="language-batch highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>BCDboot P:\Windows /s P: /f UEFI
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Copy UEFI firmware</p>
+<ul>
+<li>
+<p>Download v1.39 or later <a href="https://github.com/pftf/RPi3/releases">UEFI firmware</a></p>
+</li>
+<li>
+<p>Extract <code>RPi3_UEFI_Firmware_v1.39.zip</code> to P:\</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="windows-setup_1"><strong>Windows Setup</strong><a class="headerlink" href="#windows-setup_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Install USB drive into USB hub connected to the OPi5</p>
+</li>
+<li>
+<p>Power-on OPi5</p>
+</li>
+<li>
+<p>Press ESC to get the boot options</p>
+</li>
+<li>
+<p>Select Boot Manager &gt; USB</p>
+</li>
+<li>
+<p>You should see the orange pi logo and after 30 seconds a Recovery screen will display</p>
+</li>
+<li>
+<p>Press F8 &gt; 7 to disable driver signature enforcement</p>
+</li>
+<li>
+<p>Wait for WinPE to load</p>
+</li>
+<li>
+<p>Select Windows 11 and check I agree everything will be deleted</p>
+</li>
+<li>
+<p>Click I don't have a product key</p>
+</li>
+<li>
+<p>Delete all Disk 0 partitions</p>
+</li>
+<li>
+<p>Select Disk 0 Unallocated Space and click Next</p>
+</li>
+<li>
+<p>Summary: Install Windows 11 Pro, Keep nothing</p>
+</li>
+<li>
+<p>Click Install</p>
+</li>
+<li>
+<p>Wait for Windows to install, after restart you can remove the USB drive</p>
+</li>
+<li>
+<p><strong><em>Currently this is not working and just hangs after restart</em></strong></p>
+</li>
 </ul>
 <h2 id="known-issues"><strong>Known Issues</strong><a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
 <ul>
-<li>When booting the loading circle locks up and Windows never loads. After a few power cycles it clears. </li>
-<li>BSOD when booting. This could be a sign that the storage driver (stornvme.sys) has been overwritten by Windows\Windows Update.</li>
+<li>
+<p>When booting the loading circle locks up and Windows never loads. After a few power cycles it clears.</p>
+</li>
+<li>
+<p>BSOD when booting. This could be a sign that the storage driver (stornvme.sys) has been overwritten by Windows\Windows Update.</p>
+</li>
 </ul>
 <h2 id="thank-you"><strong>Thank you</strong><a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
 <p>This guide wouldn't have been possible without Mario Bălănică, the developers, and the community that supports the Windows on R project.</p>
@@ -1922,7 +2105,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-01T15:12:36-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-04T12:12:54-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-04</span>
   </span>
 
     
