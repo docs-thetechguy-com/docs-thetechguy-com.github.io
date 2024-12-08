@@ -1,7 +1,7 @@
 ---
 author: 
   - Brian Knackstedt
-Date: 2024-12-01
+Date: 2024-12-07
 ---
 <div style="text-align: right"> last updated: {{ git_revision_date_localized }} </div>
 
@@ -116,8 +116,8 @@ Driver download posts are pinned in the #development discord channel
 
 - Open [uupdump](https://uupdump.net)
 
-- Option 1 (Windows 11 23H2 or earlier) - Imager method: From the menu, select Windows 11 > 23H2 > latest arm64 build.
-- Option 2 (Windows 11 24H2 or later) - WinPE method: Click arm64 button, I typically choose the latest public release build
+- Windows 11 23H2 or earlier: From the menu, select Windows 11 > 23H2.
+- Windows 11 24H2 or later: Click arm64 button, I typically choose the latest public release build
 	
 	![uupdump-arch](assets/uupdump-arch.png)	
 
@@ -142,22 +142,26 @@ Driver download posts are pinned in the #development discord channel
 	``` text
 	AddUpdates   =1
 	AddDrivers   =1
+	Drv_Source   =\Drivers
 	```
 
 ## **Generate Windows ISO**
 
 - Run `uup_download_windows.cmd`
 
-- Wait for files to be downloaded, processed, and ISO generated. Takes ~60-minutes.
+- Wait for files to be downloaded, processed, and ISO generated. Takes ~60-minutes. 11:37
 
-## **Option 1: Install Windows onto NVMe Drive using Imager**
+## **Install Windows onto NVMe Drive using Imager**
 
-- Download and extract v2.3.1 or later of the [imager](https://worproject.com/downloads#windows-on-raspberry-imager)
+- Windows 11 23H2 or earlier: Download and extract v2.3.1 or later of the [imager](https://worproject.com/downloads#windows-on-raspberry-imager)
+
+- Windows 11 24H2 or later: Download and extract v2.3.0 of the [imager](https://archive.org/download/wo-r-release-2.3.0/WoR_Release_2.3.0.zip)
 
 	!!!note
 		Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)
 
 - Plug the NVMe drive into your PC
+
 - Run `WoR.exe` as an Administrator
 	- Set wizard mode = Select show all options
 	- Select storage device and device type = Raspberry Pi 2/3
@@ -166,8 +170,35 @@ Driver download posts are pinned in the #development discord channel
 	- For UEFI firmware, leave use the latest firmware. This doesn't really apply to OPi5.
 	- Leave defaults for configuration
 	- Click Install
-	- Wait for the Windows offline install to complete. Takes ~5 minutes
+	- Wait for the Windows offline install to complete. Takes ~10 minutes
 	- Click Finish 
+
+### **Update Drivers**
+
+- Open command prompt as an Administrator and run:
+
+	``` text
+	setlocal
+	REM Substitute variables for the actual location. 
+	SET Drivers=C:\ISO\drivers\ALL\stornvme_storahci
+	SET NVMe=U:
+
+	takeown /f %NVMe%\Windows\system32\drivers\stornvme.sys
+	icacls %NVMe%\Windows\system32\drivers\stornvme.sys /grant %username%:F
+	Ren %NVMe%\Windows\system32\drivers\stornvme.sys stornvme.sys.orig
+	Copy %Drivers%\stornvme.sys %NVMe%\Windows\system32\drivers /Y
+
+	takeown /f %NVMe%\Windows\system32\drivers\storahci.sys
+	icacls %NVMe%\Windows\system32\drivers\storahci.sys /grant %username%:F
+	Ren %NVMe%\Windows\system32\drivers\storahci.sys storahci.sys.orig
+	Copy %Drivers%\storahci.sys %NVMe%\Windows\system32\drivers /Y
+	
+	takeown /f %NVMe%\Windows\system32\drivers\usbehci.sys
+	icacls %NVMe%\Windows\system32\drivers\usbehci.sys /grant %username%:F
+	Ren %NVMe%\Windows\system32\drivers\usbehci.sys usbehci.sys.orig
+	Copy %Drivers%\usbehci.sys %NVMe%\Windows\system32\drivers /Y
+	endlocal
+	```
 
 ### **Windows Setup**
 
@@ -180,123 +211,12 @@ Driver download posts are pinned in the #development discord channel
 
 - Complete the OOBE process
 
-## **Option 2: Install Windows 11 24H2 or later using WinPE**
-
-- Download and extract v1.1.0 or later of the [PE-based installer](https://worproject.com/downloads#windows-on-raspberry-pe-based-installer)
-
-	!!!note
-		Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)
-
-- Plug a separate 16+ GB USB drive into your PC (This is for the installation media and not the NVMe drive)
-
-- Download latest [rufus portable](https://rufus.ie/en/#download)
-
-- Open Rufus as an Administrator, verify USB drive was detected, and drag ISO onto Rufus app
-
-- Click Start
-
-- Check both remove requirements and both disable options, then click OK
-
-### **Update Drivers**
-
-- Open command prompt as an Administrator and run:
-
-	``` text
-	md C:\ISO\Offline
-	md C:\ISO\Offline_winre
-	```
-	``` text
-	REM *** Replace stornvme.sys and storahci.sys in boot.wim index 2
-	Dism /Mount-Image /ImageFile:D:\sources\boot.wim /Index:2 /mountDir:C:\ISO\Offline
-
-	takeown /f C:\ISO\Offline\Windows\system32\drivers\stornvme.sys
-	icacls C:\ISO\Offline\Windows\system32\drivers\stornvme.sys /grant %username%:F
-	Ren C:\ISO\Offline\Windows\system32\drivers\stornvme.sys stornvme.sys.orig
-	Copy C:\ISO\drivers\ALL\stornvme_storahci\stornvme.* C:\ISO\Offline\Windows\system32\drivers /Y
-
-	takeown /f C:\ISO\Offline\Windows\system32\drivers\storahci.sys
-	icacls C:\ISO\Offline\Windows\system32\drivers\storahci.sys /grant %username%:F
-	Ren C:\ISO\Offline\Windows\system32\drivers\storahci.sys storahci.sys.orig
-	Copy C:\ISO\drivers\ALL\stornvme_storahci\storahci.* C:\ISO\Offline\Windows\system32\drivers /Y
-
-	Dism /Unmount-Image /mountDir:C:\ISO\Offline /Commit
-	```
-	``` text
-	REM *** Replace stornvme.sys and storahci.sys in install.wim index 1 and winre.wim
-	Dism /Mount-Image /ImageFile:D:\sources\install.wim /Index:1 /mountDir:C:\ISO\Offline
-
-	takeown /f C:\ISO\Offline\Windows\system32\drivers\stornvme.sys
-	icacls C:\ISO\Offline\Windows\system32\drivers\stornvme.sys /grant %username%:F
-	Ren C:\ISO\Offline\Windows\system32\drivers\stornvme.sys stornvme.sys.orig
-	Copy C:\ISO\drivers\ALL\stornvme_storahci\stornvme.* C:\ISO\Offline\Windows\system32\drivers /Y
-
-	takeown /f C:\ISO\Offline\Windows\system32\drivers\storahci.sys
-	icacls C:\ISO\Offline\Windows\system32\drivers\storahci.sys /grant %username%:F
-	Ren C:\ISO\Offline\Windows\system32\drivers\storahci.sys storahci.sys.orig
-	Copy C:\ISO\drivers\ALL\stornvme_storahci\storahci.* C:\ISO\Offline\Windows\system32\drivers /Y
-
-	REM *** Replace stornvme.sys and storahci.sys in winre.wim
-	Dism /Mount-Image /ImageFile:C:\ISO\Offline\windows\system32\recovery\winre.wim /Index:1 /mountDir:C:\ISO\Offline_winre
-	Dism /Add-Driver /Image:C:\ISO\Offline_winre /Driver:C:\ISO\drivers\ALL /Recurse /ForceUnsigned
-	Dism /Unmount-Image /mountDir:C:\ISO\Offline_winre /Commit
-
-	Dism /Cleanup-Image /Image=C:\ISO\Offline /StartComponentCleanup /ResetBase /ScratchDir:C:\Windows\temp
-
-	Dism /Unmount-Image /mountDir:C:\ISO\Offline /Commit
-	```
-
----
-- Set up the boot files
-	```batch
-	BCDboot P:\Windows /s P: /f UEFI
-	```
-
-
-- Copy UEFI firmware
-	- Download v1.39 or later [UEFI firmware](https://github.com/pftf/RPi3/releases)
-
-	- Extract `RPi3_UEFI_Firmware_v1.39.zip` to P:\
-
----
-
-### **Windows Setup**
-
-- Install USB drive into USB hub connected to the OPi5
-
-- Power-on OPi5
-
-- Press ESC to get the boot options
-
-- Select Boot Manager > USB
-
-- You should see the orange pi logo and after 30 seconds a Recovery screen will display
-
-- Press F8 > 7 to disable driver signature enforcement
-
-- Wait for WinPE to load
-
-- Select Windows 11 and check I agree everything will be deleted
-
-- Click I don't have a product key
-
-- Delete all Disk 0 partitions
-
-- Select Disk 0 Unallocated Space and click Next
-
-- Summary: Install Windows 11 Pro, Keep nothing
-
-- Click Install
-
-- Wait for Windows to install, after restart you can remove the USB drive
-
-- ***Currently this is not working and just hangs after restart***
-
-
 ## **Known Issues**
 
 - When booting the loading circle locks up and Windows never loads. After a few power cycles it clears.
 
 - BSOD when booting. This could be a sign that the storage driver (stornvme.sys) has been overwritten by Windows\Windows Update.
+  Follow the Update Drivers section above to fix.
 
 ## **Thank you**
 
