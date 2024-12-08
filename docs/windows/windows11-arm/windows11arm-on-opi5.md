@@ -155,10 +155,14 @@ Driver download posts are pinned in the #development discord channel
 
 - Windows 11 23H2 or earlier: Download and extract v2.3.1 or later of the [imager](https://worproject.com/downloads#windows-on-raspberry-imager)
 
+	!!!note
+		Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices.
+
+
 - Windows 11 24H2 or later: Download and extract v2.3.0 of the [imager](https://archive.org/download/wo-r-release-2.3.0/WoR_Release_2.3.0.zip)
 
-	!!!note
-		Ignore that it says Raspberry. This was originally built for Raspberry Pi devices, but development has been extended to support Orange Pi devices)
+	!!!Warning
+		Currently 24H2 does not work and will BSOD with DPC_Watchdog_Violation. A new storage driver is needed.
 
 - Plug the NVMe drive into your PC
 
