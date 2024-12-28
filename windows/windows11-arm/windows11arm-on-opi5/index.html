@@ -1690,8 +1690,8 @@
 <p>NVMe drive (such as a <a href="https://www.amazon.com/gp/product/B07XVTRFF8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;th=1">SABRENT 1TB Rocket NVMe PCIe M.2 2242</a>)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Must be a NVMe M.2 drive. You may find some NVMe drives do not have driver support. I have found SABENT brand is supported. </p>
-<p>There is no driver support for All M.2 SATA drives.</p>
+<p>Must be a NVMe M.2 drive. You may find some NVMe drives do not work.    </p>
+<p>There is no driver support for All M.2 SATA drives. Drives with two notches.</p>
 </div>
 </li>
 <li>
@@ -1803,7 +1803,11 @@
 </li>
 <li>
 <p>Windows 11 24H2 or later: Click arm64 button, I typically choose the latest public release build</p>
-<p><img alt="uupdump-arch" src="../assets/uupdump-arch.png" />    </p>
+<p><img alt="uupdump-arch" src="../assets/uupdump-arch.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently 24H2 does not work and will BSOD with DPC_Watchdog_Violation. Steps provided in case it gets fixed at some point.</p>
+</div>
 </li>
 <li>
 <p>Select latest Windows 11 update</p>
@@ -1857,7 +1861,7 @@
 <p>Windows 11 24H2 or later: Download and extract v2.3.0 of the <a href="https://archive.org/download/wo-r-release-2.3.0/WoR_Release_2.3.0.zip">imager</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Currently 24H2 does not work and will BSOD with DPC_Watchdog_Violation. A new storage driver is needed.</p>
+<p>Currently 24H2 does not work and will BSOD with DPC_Watchdog_Violation. Steps provided in case it gets fixed at some point.</p>
 </div>
 </li>
 <li>
@@ -1907,8 +1911,32 @@
 </ul>
 <h3 id="windows-setup"><strong>Windows Setup</strong><a class="headerlink" href="#windows-setup" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Install NVMe drive into the bottom of your OPi5</li>
-<li>Power-on OPi5</li>
+<li>
+<p>Install NVMe drive into the bottom of your OPi5</p>
+</li>
+<li>
+<p>Power-on OPi5</p>
+</li>
+<li>
+<p>Increase CPU base speed</p>
+<ul>
+<li>
+<p>Press ESC to get BIOS screen</p>
+</li>
+<li>
+<p>Select Device Manager &gt; Rockchip Platform Configuration &gt; CPU Performance</p>
+</li>
+<li>
+<p>Set clock preset to maximum</p>
+</li>
+<li>
+<p>Press F10 &gt; Y &gt; ESC &gt; ESC &gt; ESC</p>
+</li>
+<li>
+<p>Select Boot Manager &gt; Windows Boot Manager</p>
+</li>
+</ul>
+</li>
 <li>
 <p>Wait for Windows to finish setup. Takes 30+ minutes.</p>
 <div class="admonition note">
@@ -1923,11 +1951,20 @@
 <h2 id="known-issues"><strong>Known Issues</strong><a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>When booting the loading circle locks up and Windows never loads. After a few power cycles it clears.</p>
+<p>Windows 11 24H2 or later is not supported.</p>
+</li>
+<li>
+<p>Random BSOD with DPC_Watchdog error. Typically happens under heavy load when the system has been powered on for some time. Scheduling a restart for once a day seems to help.</p>
 </li>
 <li>
 <p>BSOD when booting. This could be a sign that the storage driver (stornvme.sys) has been overwritten by Windows\Windows Update.
   Follow the Update Drivers section above to fix.</p>
+</li>
+<li>
+<p>When shutting down, device will not actually power off. System may also BSOD during shutdown.</p>
+</li>
+<li>
+<p>When booting the Windows loading circle freezes and Windows never loads. After a few power cycles it seems to clears.</p>
 </li>
 </ul>
 <h2 id="thank-you"><strong>Thank you</strong><a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
@@ -1967,11 +2004,11 @@
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contributors">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
       
     </span>
     <nav>
-      TheTechGuy
+      TheTechGuy, Not Committed Yet
     </nav>
   </span>
 
