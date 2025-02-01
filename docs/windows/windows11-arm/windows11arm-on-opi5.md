@@ -1,13 +1,15 @@
 ---
 author: 
   - Brian Knackstedt
-Date: 2024-12-08
+Date: 2025-02-01
 ---
 <div style="text-align: right"> last updated: {{ git_revision_date_localized }} </div>
 
 # Windows 11 ARM on OPi5
 
-This guide describes how to install the latest Windows 11 ARM image on an Orange Pi 5. Keep in mind this is still in development and individual results may vary.
+This guide describes how to install the latest Windows 11 ARM image on an Orange Pi 5. Keep in mind this is still in development and individual results may vary. 
+
+After using this solution for two months, I have found it to be unstable with BSDO at least once a day. It does work well if you want to test Windows on an ARM64 processor.
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qpqhxOXO4D4?si=tOYdRPV1eDemUZvB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -23,7 +25,7 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
 	!!!note
 		OPi5 supports ARMv8.2. Windows 11 requires ARMv8.1
 
-		As of June 2024, Orange Pi 5 Pro is not supported by this project.
+		As of June 2024, Orange Pi 5 Pro/Plus is not supported by this project.
 
 - [RGB fan and low-profile CPU radiator for Orange Pi 5](https://www.aliexpress.us/item/3256805285062643.html)
 
@@ -39,9 +41,9 @@ This guide describes how to install the latest Windows 11 ARM image on an Orange
 - NVMe drive (such as a [SABRENT 1TB Rocket NVMe PCIe M.2 2242](https://www.amazon.com/gp/product/B07XVTRFF8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1))
 
 	!!!note
-		Must be a NVMe M.2 drive. You may find some NVMe drives do not have driver support. I have found SABENT brand is supported.	
+		Must be a NVMe M.2 drive. You may find some NVMe drives do not work.	
 
-		There is no driver support for All M.2 SATA drives.
+		There is no driver support for All M.2 SATA drives. Drives with two notches.
 
 - [M.2 SSD screw set](https://www.amazon.com/gp/product/B086T2KXGQ)
 - [Enclosure for M.2 PCIe NVMe](https://www.amazon.com/gp/product/B08RVC6F9Y)
@@ -119,7 +121,10 @@ Driver download posts are pinned in the #development discord channel
 - Windows 11 23H2 or earlier: From the menu, select Windows 11 > 23H2.
 - Windows 11 24H2 or later: Click arm64 button, I typically choose the latest public release build
 	
-	![uupdump-arch](assets/uupdump-arch.png)	
+	![uupdump-arch](assets/uupdump-arch.png)
+
+	!!!Warning
+		Currently 24H2 does not work and will BSOD with DPC_Watchdog_Violation.	Steps provided in case it gets fixed at some point.
 
 - Select latest Windows 11 update
 
@@ -162,7 +167,7 @@ Driver download posts are pinned in the #development discord channel
 - Windows 11 24H2 or later: Download and extract v2.3.0 of the [imager](https://archive.org/download/wo-r-release-2.3.0/WoR_Release_2.3.0.zip)
 
 	!!!Warning
-		Currently 24H2 does not work and will BSOD with DPC_Watchdog_Violation. A new storage driver is needed.
+		Currently 24H2 does not work and will BSOD with DPC_Watchdog_Violation.	Steps provided in case it gets fixed at some point.
 
 - Plug the NVMe drive into your PC
 
@@ -207,7 +212,22 @@ Driver download posts are pinned in the #development discord channel
 ### **Windows Setup**
 
 - Install NVMe drive into the bottom of your OPi5
+
 - Power-on OPi5
+
+- Increase CPU base speed
+
+	- Press ESC to get BIOS screen
+
+	- Select Device Manager > Rockchip Platform Configuration > CPU Performance
+
+	- Set clock preset to maximum
+
+	- Press F10 > Y > ESC > ESC > ESC
+
+	- Select Boot Manager > Windows Boot Manager
+
+
 - Wait for Windows to finish setup. Takes 30+ minutes.
 
 	!!!note
@@ -217,10 +237,16 @@ Driver download posts are pinned in the #development discord channel
 
 ## **Known Issues**
 
-- When booting the loading circle locks up and Windows never loads. After a few power cycles it clears.
+- Windows 11 24H2 or later is not supported.
+
+- Random BSOD with DPC_Watchdog error. Typically happens under heavy load when the system has been powered on for some time. Scheduling a restart for once a day seems to help.
 
 - BSOD when booting. This could be a sign that the storage driver (stornvme.sys) has been overwritten by Windows\Windows Update.
   Follow the Update Drivers section above to fix.
+
+- When shutting down, device will not actually power off. System may also BSOD during shutdown.
+
+- When booting the Windows loading circle freezes and Windows never loads. After a few power cycles it seems to clears.
 
 ## **Thank you**
 
