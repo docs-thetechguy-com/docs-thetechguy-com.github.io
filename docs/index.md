@@ -15,7 +15,7 @@ Explore guides and articles by product
 <!-- Logos: https://logos.fandom.com/ -->
 
 - <img src="assets/logos/hardware.svg" alt="logo_hardware" width="50" /> <sup><sup><font size = "6">[Hardware](hardware/index.md)</font></sup></sup>
-<br>| [HPE ProLiant DL360 Gen9](hardware/hpe-proliant-dl360-gen9/hyper-v-setup-guide.md) |
+<br>| [HPE ProLiant DL360 Gen9](hardware/hpe-proliant-dl360-gen9/hpe-proliant-dl360-gen9-setup-guide.md) |
 
 - <img src="assets/logos/homeassistant.svg" alt="logo_homeassistant" width="50" /> <sup><sup><font size = "6">[Home Automation](homeautomation/index.md)</font></sup></sup>
 <br>| [HAOS on Hyper-V](homeautomation/haos/install-haos-on-hyperv.md) |
@@ -24,7 +24,7 @@ Explore guides and articles by product
 <!-- <br>| []() | -->
 
 - <img src="assets/logos/network.svg" alt="logo_network" width="50" /> <sup><sup><font size = "6">[Network](network/index.md)</font></sup></sup>
-<br>| [Omada Controller](network/omada-controller/windows-setup-guide.md) |
+<br>| [Omada Controller](network/omada-controller/omada-controller-setup-guide.md) |
 
 - <img src="assets/logos/psadt.svg" alt="logo_psadt" width="50" /> <sup><sup><font size = "6">[PSAppDeployToolkit](psadt/index.md)</font></sup></sup>
 <br>| [Repository](https://github.com/docs-thetechguy-com/repository/tree/main/psadt) | [Training](psadt/training.md) | [Support](psadt/support.md) |

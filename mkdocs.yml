@@ -197,6 +197,9 @@ nav:
 # - Blog: /blog/index.md
 - About: about.md
 
+- Hardware:
+  - hardware/index.md
+  - HPE DL360 Gen9 Setup Guide: hardware/hpe-proliant-dl360-gen9/hpe-proliant-dl360-gen9-setup-guide.md
 - Home Automation:
   - homeautomation/index.md
   - Install HAOS on Hyper-V: homeautomation/haos/install-haos-on-hyperv.md
@@ -221,6 +224,9 @@ nav:
   - Access controls: intune/RBAC.md
   - Windows 365: intune/windows-365.md
   - Intune Suite: intune/intune-suite.md
+- Network:
+  - network/index.md
+  - Omada Controller Setup Guide: network/omada-controller/omada-controller-setup-guide.md
 - PSAppDeployToolkit:
   - psadt/index.md
   - psadt/training.md

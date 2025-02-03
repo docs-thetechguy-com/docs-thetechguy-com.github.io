@@ -3,6 +3,6 @@ author:
   - Brian Knackstedt
 Date: 2025-01-31
 ---
-# Network
+# Hadrware
 
-- [HPE ProLiant DL360 Gen9 - Hyper-V Setup Guide](hpe-proliant-dl360-gen9\hyper-v-setup-guide.md)
+- [HPE ProLiant DL360 Gen9 Setup Guide](hpe-proliant-dl360-gen9\hpe-proliant-dl360-gen9-setup-guide.md)
