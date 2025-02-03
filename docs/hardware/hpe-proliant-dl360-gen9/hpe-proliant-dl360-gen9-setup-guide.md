@@ -38,11 +38,11 @@ Date: 2025-01-31
 
 - 1 x Nvidia ConnectX-4 InfiniBand PCIe Adapter (MCX414A-BCAT)
 
+!!! Info ""
 	This is the network adapter I'm using, but you could also use a 10GbE adapter. I would recommend it support [SRV-IO](https://learn.microsoft.com/en-us/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-).
 
-> [!IMPORTANT]
->
-> On top of the server case is a sticker with the default iLO information. Make note of this information.
+!!! Info IMPORTANT
+    On top of the server case is a sticker with the default iLO information. Make note of this information.
 
 **Reset HPE Integrated Lights-Out (iLO)**
 

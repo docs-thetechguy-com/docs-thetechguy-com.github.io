@@ -38,7 +38,7 @@ This guide describes how to install the latest Home Assistant OS on Hyper-V.
 - Open [`http://homeassistant.local:8123`](http://homeassistant.local:8123)
 
 ## **Install HACS (Home Assistant Community Store)**
-[Reference](https://hacs.xyz/docs/setup/download)
+[Reference Documentation](https://hacs.xyz/docs/setup/download)
 
 - Install SSH add-on
 - Set password

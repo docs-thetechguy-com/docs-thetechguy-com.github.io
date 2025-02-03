@@ -26,7 +26,7 @@ This guide will walk you through installing and configuring tp-link's Omada Soft
 - Download ZIP file for [Omada Software Controller for Windows](https://support.omadanetworks.com/us/product/omada-software-controller/?resourceType=download)
 - Download MSI file for [Microsoft OpenJDK 21 LTS for Windows x64](https://learn.microsoft.com/en-us/java/openjdk/download#openjdk-21)
 - Download [Sysinternals Autologon](https://learn.microsoft.com/en-us/sysinternals/downloads/autologon)
-- Create a [tp-link cloud access account]([Omada Cloud Management Platform](https://omada.tplinkcloud.com/#signUp))
+- Create a [tp-link cloud access account](https://omada.tplinkcloud.com/#signUp)
 
 ## Installation
 
@@ -43,7 +43,8 @@ This guide will walk you through installing and configuring tp-link's Omada Soft
 - Run Omada Controller.exe
   Note: If SmartScreen is displayed, click Run anyway
 - When prompted to open Java 8 webpage, click Yes
-  Note: Web browser can be closed, download is not needed
+!!! Note ""
+    Web browser can be closed, download is not needed
 - Change install folder to C:\Omada Controller
 - Complete installation and start Omada Controller
 - Copy C:\Users\Public\Desktop\Omada Controller.lnk to C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
@@ -122,8 +123,8 @@ This guide will walk you through installing and configuring tp-link's Omada Soft
 
 - Right-click Users and select New User
 
-  - username = tp-link
-  - password = Enter strong password - [Strong Password Generator](https://bitwarden.com/password-generator)
+  - Username = tp-link
+  - Password = Enter strong password - [Strong Password Generator](https://bitwarden.com/password-generator)
   - Uncheck User must change password at next login
   - Check Password never expires
   - Click Create and then Close
@@ -139,8 +140,9 @@ This guide will walk you through installing and configuring tp-link's Omada Soft
 - Agree to EULA
 
 - Enter tp-link account information
-
-  Note: Leave domain blank
+    
+    !!! Note ""
+        Leave domain blank
 
 - Click Enable
 
@@ -148,7 +150,8 @@ This guide will walk you through installing and configuring tp-link's Omada Soft
 
 - Restart device and verify Windows signed in and Omada Controller launches
 
-  Note: If you are using Hyper-V make sure you are in a basic session
+!!! Note ""
+    If you are using Hyper-V make sure you are in a basic session
 
 
 
