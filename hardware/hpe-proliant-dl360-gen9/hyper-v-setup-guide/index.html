@@ -20,7 +20,7 @@
     
     
       
-        <title>Hyper v setup guide - TheTechGuy Docs</title>
+        <title>Hyper-V Setup Guide - TheTechGuy Docs</title>
       
     
     
@@ -67,7 +67,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Hyper v setup guide - TheTechGuy Docs" >
+        <meta  property="og:title"  content="Hyper-V Setup Guide - TheTechGuy Docs" >
       
         <meta  property="og:description"  content="None" >
       
@@ -83,7 +83,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Hyper v setup guide - TheTechGuy Docs" >
+        <meta  name="twitter:title"  content="Hyper-V Setup Guide - TheTechGuy Docs" >
       
         <meta  name="twitter:description"  content="None" >
       
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-link-omada-controller-for-windows" class="md-skip">
+        <a href="#hpe-proliant-dl360-gen9-hyper-v-setup-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -188,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hyper v setup guide
+              Hyper-V Setup Guide
             
           </span>
         </div>
@@ -1405,9 +1405,192 @@
 
 
 
-<div style="text-align: right"> last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-01T13:51:38-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-01</span> </div>
+<div style="text-align: right"> last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-01T13:53:01-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-01</span> </div>
 
-<h1 id="tp-link-omada-controller-for-windows">tp-link Omada Controller for Windows<a class="headerlink" href="#tp-link-omada-controller-for-windows" title="Permanent link">&para;</a></h1>
+<h1 id="hpe-proliant-dl360-gen9-hyper-v-setup-guide">HPE ProLiant DL360 Gen9 Hyper-V Setup Guide<a class="headerlink" href="#hpe-proliant-dl360-gen9-hyper-v-setup-guide" title="Permanent link">&para;</a></h1>
+<p><strong>Hardware</strong></p>
+<ul>
+<li>
+<p>HPE ProLiant DL360 Gen9 Server (2 x Intel XEON E5-2690 v4 2.60GHz)</p>
+<p><a href="https://www.theserverstore.com/hp-1u-servers-gen-9">The Server Store</a></p>
+<p><a href="https://www.newegg.com/p/pl?N=101714326%204131%20600561141">Newegg</a></p>
+</li>
+<li>
+<p>HPE SmartMemory 128 GB (16 x 8GB DDR4 2133MHz ECC)</p>
+</li>
+<li>
+<p>HPE ProLiant DL360 Gen9 2SFF SAS/SATA Universal Media Bay Kit (775428-001)</p>
+<p>Connect to onboard SATA port 1 and install 2 SSD drives. This will be used for the OS.</p>
+</li>
+<li>
+<p>HPE P440ar or H240AR SAS Embedded Controller</p>
+</li>
+<li>
+<p>10 x HPE Gen 9 SFF drive caddy with screws (651687-001)</p>
+</li>
+<li>
+<p>2 x Samsung EVO 870 SSD 500GB SSD (<a href="https://amzn.to/4jcVhrr">https://amzn.to/4jcVhrr</a>)</p>
+</li>
+<li>
+<p>4 x Samsung EVO 870 SSD 500GB SSD (<a href="https://amzn.to/4jcVhrr">https://amzn.to/4jcVhrr</a>)</p>
+</li>
+<li>
+<p>4 x Western Digital WD20NPVZ 2TB SATA (<a href="https://amzn.to/4jcVfjj">https://amzn.to/4jcVfjj</a>)</p>
+</li>
+<li>
+<p>1 x Samsung EVO 980 Pro 1TB M.2 NVMe (<a href="https://amzn.to/4jbjAGk">https://amzn.to/4jbjAGk</a>)</p>
+</li>
+<li>
+<p>1 x M.2 to PCIe Adpater (<a href="https://amzn.to/4fUBBWs">https://amzn.to/4fUBBWs</a>)</p>
+</li>
+<li>
+<p>1 x Nvidia ConnectX-4 InfiniBand PCIe Adapter (MCX414A-BCAT)</p>
+<p>This is the network adapter I'm using, but you could also use a 10GbE adapter. I would recommend it support <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/network/overview-of-single-root-i-o-virtualization--sr-iov-">SRV-IO</a>.</p>
+</li>
+</ul>
+<blockquote>
+<p>[!IMPORTANT]</p>
+<p>On top of the server case is a sticker with the default iLO information. Make note of this information.</p>
+</blockquote>
+<p><strong>Reset HPE Integrated Lights-Out (iLO)</strong></p>
+<ul>
+<li>Connect iLO port to the network</li>
+<li>Power on server</li>
+<li>When available, Press F9 for System Utilities</li>
+<li>Select System Configuration &gt; iLO 4 Configuration Utility</li>
+<li>Change Set to factory defaults to Yes</li>
+<li>Press ESC and Y to save change</li>
+<li>Press ESC several times and Enter to restart server</li>
+<li>Make note of the iLO IP address that is displayed on the boot screen</li>
+</ul>
+<p><strong>Configure HPE Integrated Lights-Out (iLO)</strong></p>
+<ul>
+<li>From your workstation, open a web browser</li>
+<li>Enter iLO IP address</li>
+<li>
+<p>Enter credentials from the sticker</p>
+</li>
+<li>
+<p>Navigate to Administration &gt; Firmware</p>
+</li>
+<li>
+<p>Verify iLO and BIOS firmware are the latest versions</p>
+<p>Latest firmware can be downloaded from <a href="https://support.hpe.com/connect/s/product?language=en_US&amp;kmpmoid=5219994&amp;tab=driversAndSoftware">HPE Integrated Lights-Out 4 (iLO 4)</a></p>
+<p>Google P89_3.40_08_29_2024 for the latest system firmware <a href="https://wp.biesma.net">Biesma.net</a></p>
+</li>
+<li>
+<p>Navigate to Administration &gt; User Administration</p>
+</li>
+<li>Check Administrator and click Edit</li>
+<li>Set a new long complex password</li>
+<li>Navigate to Administration &gt; Access Settings</li>
+<li>Disable all services that are not being used (SSH, SNMP, IPMI/DCMI, Serial CLI, Virtual Serial Port)</li>
+<li>Enable Require Login for iLO RBSU</li>
+<li>Increase Minimum Password Length to 15</li>
+<li>Update Server Name</li>
+<li>Navigate to Administration &gt; Security</li>
+<li>Enable login security banner</li>
+</ul>
+<p><strong>Configure System BIOS</strong></p>
+<ul>
+<li>Open iLO Overview page</li>
+<li>Under Integrated Remote Console, click HTML5</li>
+<li>Power on server</li>
+<li>When available, Press F9 for System Utilities</li>
+<li>Select System Configuration &gt; BIOS/Platform Configuration</li>
+<li>System Options &gt; SATA Controller Options &gt; Enable Dynamic Smart Array RAID Support</li>
+<li>System Options &gt; Virtualization Options &gt; All Enabled</li>
+<li>Boot Mode &gt; Boot Mode &gt; UEFI Mode</li>
+<li>Power Management &gt; Power Profile &gt; Balanced Power and Performance</li>
+<li>Power Management &gt; Advanced Power Options &gt; Redundant Power Supply Mode &gt; High Efficiency Mode (Auto)</li>
+<li>Advanced Options &gt; Fan and Thermal Options &gt; Thermal Configuration &gt; Optimal Cooling</li>
+<li>Press F10 and Y to save configuration</li>
+<li>Press ESC several times to return to System Configuration menu</li>
+<li>Reboot system</li>
+</ul>
+<p><strong>Create RAID Array and Enable HBA Mode</strong></p>
+<ul>
+<li>When available, Press F9 for System Utilities</li>
+<li>Select System Configuration &gt; Embedded Storage</li>
+<li>Select Exit and launch Smart Storage Administrator</li>
+<li>
+<p>Create RAID 1 array</p>
+</li>
+<li>
+<p>From the drop-down menu, select Smart HBA controller &gt; Configure</p>
+</li>
+<li>Enable HBA mode</li>
+<li>Exit Smart Storage Administrator</li>
+<li>Reboot server</li>
+</ul>
+<p><strong>Create Media</strong></p>
+<ul>
+<li>Download Windows Server 2025 Datacenter</li>
+<li>Use Rufus to write ISO to USB drive</li>
+<li>Download <a href="https://support.hpe.com/connect/s/softwaredetails?collectionId=MTX-78fc77876f754f93">HPE B140i Controller Drivers</a></li>
+<li>Open download and extract to a folder named Drivers on the USB drive</li>
+<li>Insert USB drive into server</li>
+</ul>
+<p><strong>Install Operating System</strong></p>
+<ul>
+<li>Open iLO Overview page</li>
+<li>Under Integrated Remote Console, click HTML5</li>
+<li>Power on server</li>
+<li>When available, Press F11 for Boot menu</li>
+<li>Select USB drive</li>
+<li>When prompted, press any key to boot Windows Server setup</li>
+<li>Select Load drivers</li>
+<li>Select USB &gt; Drivers folder</li>
+<li>Wait for installation to complete</li>
+<li>Apply Windows product key</li>
+<li>Enable Receive updates for other Microsoft products</li>
+<li>Install all Windows Updates</li>
+<li>Install all optional (driver) updates</li>
+</ul>
+<p><strong>Install HPE Drivers</strong></p>
+<ul>
+<li>
+<p>[H240ar Smart HBA Driver for Windows] (x64)(<a href="https://support.hpe.com/connect/s/softwaredetails?language=en_US&amp;collectionId=MTX-32cb58a13b764af9&amp;tab=revisionHistory">https://support.hpe.com/connect/s/softwaredetails?language=en_US&amp;collectionId=MTX-32cb58a13b764af9&amp;tab=revisionHistory</a>)</p>
+</li>
+<li>
+<p><a href="https://support.hpe.com/connect/s/softwaredetails?language=en_US&amp;collectionId=MTX-b57ffa2f7fe942a8&amp;tab=revisionHistory">HPE Smart HBA Firmware</a></p>
+</li>
+<li>
+<p><a href="https://support.hpe.com/connect/s/softwaredetails?language=en_US&amp;collectionId=MTX-a1953c549aa145b2&amp;tab=revisionHistory">HPE Smart Storage Administrator (HPE SSA) for Windows (x64)</a></p>
+</li>
+<li>
+<p><a href="https://support.hpe.com/connect/s/softwaredetails?language=en_US&amp;collectionId=MTX-cef186d7aeff4c8e&amp;tab=revisionHistory">iLO 4 Channel Interface Driver for Windows (x64)</a></p>
+</li>
+<li>
+<p><a href="https://support.hpe.com/connect/s/softwaredetails?language=en_US&amp;collectionId=MTX-0304d65ecdff4ea5&amp;tab=revisionHistory">iLO 4 Management Controller Driver Package for Windows (x64)</a></p>
+</li>
+<li>
+<p><a href="https://support.hpe.com/connect/s/softwaredetails?language=en_US&amp;collectionId=MTX-c64a84fd2c1c48b6&amp;tab=revisionHistory">Matrox G200eH Video Controller Driver for Windows (x64)</a></p>
+<p>This may cause you to lose video and you will need to force a server restart.</p>
+</li>
+</ul>
+<p><strong>Install Nvidia InfiniBand Drivers</strong></p>
+<ul>
+<li>
+<p><a href="https://www.mellanox.com/downloads/WinOF/MLNX_WinOF2-3_0_50000_All_x64.exe">Nvidia WinOF-2 Driver for Windows (x64) 3.0.50000</a></p>
+</li>
+<li>
+<p>{Nvidia ConnectX-4 (MCX414A-BCAT) Firmware 12.28.2302](<a href="https://www.mellanox.com/downloads/firmware/fw-ConnectX4-rel-12_28_2302-MCX414A-BCA_Ax-UEFI-14.21.17-FlexBoot-3.6.102.bin.zip">https://www.mellanox.com/downloads/firmware/fw-ConnectX4-rel-12_28_2302-MCX414A-BCA_Ax-UEFI-14.21.17-FlexBoot-3.6.102.bin.zip</a>)</p>
+</li>
+<li>
+<p>At this point Device Manager should show clean</p>
+</li>
+</ul>
+<p><strong>Switch Controller to HBA Mode</strong></p>
+<ul>
+<li>Open HPE Smart Storage Administrator</li>
+<li>Select Smart Array P440ar or H240ar controller</li>
+<li>Select Configure</li>
+<li>Select Enable HBA Mode</li>
+<li>Select Manage Power Settings &gt; Min Power</li>
+<li>Select Physical Devices and verify all eight drives display</li>
+<li>Restart system to apply settings</li>
+</ul>
 
 
 
@@ -1428,7 +1611,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-01T13:51:38-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-01T13:53:01-06:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-01</span>
   </span>
 
     
@@ -1443,7 +1626,7 @@
       
     </span>
     <nav>
-      
+      TheTechGuy, Not Committed Yet
     </nav>
   </span>
 
