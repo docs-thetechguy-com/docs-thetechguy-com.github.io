@@ -3,6 +3,8 @@ author:
   - Brian Knackstedt
 Date: 2026-01-31
 ---
+![Entertainment Banner](assets/entertainment-banner.png)
+
 # Entertainment
 
 - [FileBot + Radarr Complete Step‑by‑Step Guide](filebot-radarr/filebot_radarr_full_guide_windows.md)
