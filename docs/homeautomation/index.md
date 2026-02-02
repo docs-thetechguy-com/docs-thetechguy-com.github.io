@@ -1,7 +1,7 @@
 ---
 author: 
   - Brian Knackstedt
-Date: 2024-07-24
+Date: 2024-07-25
 ---
 ![Home Automation Banner](assets/home-automation-banner.png)
 

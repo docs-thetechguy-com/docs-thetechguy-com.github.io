@@ -1,7 +1,7 @@
 ---
 author: 
   - Brian Knackstedt
-Date: 2026-01-31
+Date: 2026-02-01
 ---
 ![Entertainment Banner](assets/entertainment-banner.png)
 
