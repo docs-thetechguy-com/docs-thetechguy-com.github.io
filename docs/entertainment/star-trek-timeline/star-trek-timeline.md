@@ -1,3 +1,5 @@
+![Star Trek Timeline Banner](assets/star-trek-timeline-banner.png)
+
 # Comprehensive Star Trek Timeline
 
 ## Overview
