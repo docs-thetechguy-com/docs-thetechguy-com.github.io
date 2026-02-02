@@ -1,3 +1,5 @@
+![FileBot + Radarr Banner](assets/filebot-radarr-banner.png)
+
 # FileBot + Radarr Complete Step‑by‑Step Guide
 
 ## What You'll End Up With
