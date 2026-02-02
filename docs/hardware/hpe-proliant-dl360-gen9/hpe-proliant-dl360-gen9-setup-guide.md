@@ -6,6 +6,8 @@ Date: 2025-01-31
 ---
 <div style="text-align: right"> last updated: {{ git_revision_date_localized }} </div>
 
+![HPE ProLiant DL360 Gen9 Banner](assets/hpe-proliant-dl360-gen9-banner.png)
+
 # HPE ProLiant DL360 Gen9 Setup Guide
 
 **Hardware**
