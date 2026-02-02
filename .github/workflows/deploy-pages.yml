@@ -1,0 +1,80 @@
+# GitHub Actions Workflow: Deploy Zensical to GitHub Pages
+#
+# PURPOSE:
+#   This workflow automatically builds and deploys your Zensical documentation site
+#   to GitHub Pages every time you push changes to the main branch.
+#
+# HOW IT WORKS:
+#   1. Listens for pushes to the 'main' branch
+#   2. Sets up Python 3.12 environment
+#   3. Installs Zensical (static site generator)
+#   4. Builds your site (converts markdown to HTML in the 'site/' folder)
+#   5. Uploads the built site as an artifact
+#   6. Deploys the artifact to GitHub Pages
+#
+# RESULT:
+#   Your site is live at: https://docs-thetechguy-com.github.io/
+#
+# WORKFLOW TRIGGERS
+
+name: Deploy to GitHub Pages
+
+# Trigger this workflow when code is pushed to the main branch
+on:
+  push:
+    branches:
+      - main
+
+# PERMISSIONS: Define what this workflow is allowed to do
+permissions:
+  contents: read        # Read repository contents (to check out code)
+  pages: write          # Write to GitHub Pages (to deploy the site)
+  id-token: write       # Create OIDC token for secure deployments
+
+# JOBS: Define the work to be done
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner (Linux virtual machine)
+    
+    steps:
+      # Step 1: Check out the repository code
+      # This downloads your repository files so the workflow can access them
+      - uses: actions/checkout@v4
+
+      # Step 2: Set up Python environment
+      # Installs Python 3.12 on the Ubuntu runner
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Step 3: Install Zensical
+      # Uses pip (Python package manager) to install Zensical from PyPI
+      # This installs Zensical and all its dependencies
+      - name: Install dependencies
+        run: pip install zensical
+
+      # Step 4: Build the static site
+      # Runs 'zensical build' to convert your markdown files (in docs/) into HTML
+      # Output is written to the 'site/' directory
+      - name: Build site
+        run: zensical build
+
+      # Step 5: Configure GitHub Pages settings
+      # Prepares the GitHub Pages environment for deployment
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      # Step 6: Upload built site as an artifact
+      # Takes the 'site/' folder and uploads it as a GitHub Actions artifact
+      # This artifact will be deployed to GitHub Pages in the next step
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/  # Path to the built site folder
+
+      # Step 7: Deploy to GitHub Pages
+      # Takes the uploaded artifact and deploys it to your GitHub Pages site
+      # Your site will be available at: https://<username>.github.io/
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
