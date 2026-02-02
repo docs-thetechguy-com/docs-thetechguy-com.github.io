@@ -196,7 +196,6 @@ nav:
 - Product directory: index.md
 # - Blog: /blog/index.md
 - About: about.md
-
 - Hardware:
   - hardware/index.md
   - HPE DL360 Gen9 Setup Guide: hardware/hpe-proliant-dl360-gen9/hpe-proliant-dl360-gen9-setup-guide.md
@@ -235,6 +234,9 @@ nav:
 - Windows:
   - windows/index.md
   - Windows 11 ARM on OPi5: windows/windows11-arm/windows11arm-on-opi5.md
+- Fun articles:
+  - entertainment/index.md
+  - Star Trek Timeline: entertainment/star-trek-timeline/star-trek-timeline.md
 
 #not_in_nav:|
 #  index.md
