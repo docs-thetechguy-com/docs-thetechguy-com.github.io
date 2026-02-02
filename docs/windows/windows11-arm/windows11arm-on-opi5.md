@@ -5,6 +5,8 @@ Date: 2025-02-01
 ---
 <div style="text-align: right"> last updated: {{ git_revision_date_localized }} </div>
 
+![Windows 11 ARM on OPi5 Banner](assets/windows11-arm-banner.png)
+
 # Windows 11 ARM on OPi5
 
 This guide describes how to install the latest Windows 11 ARM image on an Orange Pi 5. Keep in mind this is still in development and individual results may vary. 

@@ -3,7 +3,10 @@ author:
   - Brian Knackstedt
 Date: 2024-07-27
 ---
+![Intune Banner](assets/intune-banner.png)
+
 # Intune
+
 
 https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/md-102
 
