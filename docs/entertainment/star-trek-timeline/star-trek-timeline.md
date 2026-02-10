@@ -489,85 +489,85 @@ Includes all TV series, films, and specials.
 
 ### Streaming Availability Key
 
-![Streaming Availability Key](assets/Streaming%20Availability%20Key.png)
+![Streaming Availability Key](assets/Streaming-Availability-Key.png)
 
 ---
 
 ### Pre-Federation Era — 22ND CENTURY (Before 2161)
 
-![Pre-Federation Era — 22ND CENTURY (Before 2161)](assets/Pre-Federation%20Era%20—%2022ND%20CENTURY%20%28Before%202161%29.png)
+![Pre-Federation Era — 22ND CENTURY (Before 2161)](assets/Pre-Federation-Era-—-22ND-CENTURY-(Before-2161).png)
 
 ---
 
 ### Early Federation Era — 23RD CENTURY (2161–2256)
 
-![Early Federation Era — 23RD CENTURY (2161–2256)](assets/Early%20Federation%20Era%20—%2023RD%20CENTURY%20%282161–2256%29.png)
+![Early Federation Era — 23RD CENTURY (2161–2256)](assets/Early-Federation-Era-—-23RD-CENTURY-(2161–2256).png)
 
 ---
 
 ### The Pike Era (2254–2259)
 
-![The Pike Era (2254–2259)](assets/The%20Pike%20Era%20%282254–2259%29.png)
+![The Pike Era (2254–2259)](assets/The-Pike-Era-(2254–2259).png)
 
 ---
 
 ### The Kirk Era (2265–2293)
 
-![The Kirk Era (2265–2269)](assets/The%20Kirk%20Era%20%282265–2269%29.png)
+![The Kirk Era (2265–2269)](assets/The-Kirk-Era-(2265–2269).png)
 
-![The Kirk Era (2273–2293)](assets/The%20Kirk%20Era%20%282273–2293%29.png)
+![The Kirk Era (2273–2293)](assets/The-Kirk-Era-(2273–2293).png)
 
 ---
 
 ### The Lost Era (2293–2364)
 
-![The Lost Era (2293–2364)](assets/The%20Lost%20Era%20%282293–2364%29.png)
+![The Lost Era (2293–2364)](assets/The-Lost-Era-(2293–2364).png)
 
 ---
 
 ### The Next Generation Era (2364–2379)
 
-![The Next Generation Era (2364–2379)](assets/The%20Next%20Generation%20Era%20%282364–2379%29.png)
+![The Next Generation Era (2364–2379)](assets/The-Next-Generation-Era-(2364–2379).png)
 
 
 ### Overlapping Series Timeline (2369–2378)
 
-![Overlapping Series Timeline (2369–2378)](assets/Overlapping%20Series%20Timeline%20%282369–2378%29.png)
+![Overlapping Series Timeline (2369–2378)](assets/Overlapping-Series-Timeline-(2369–2378).png)
 
 
 ### Deep Space Nine (2369–2375)
 
-![Deep Space Nine (2369–2375)](assets/Deep%20Space%20Nine%20%282369–2375%29.png)
+![Deep Space Nine (2369–2375)](assets/Deep-Space-Nine-(2369–2375).png)
 
 
 ### Voyager (2371–2378)
 
-![Voyager (2371–2378)](assets/Voyager%20%282371–2378%29.png)
+![Voyager (2371–2378)](assets/Voyager-(2371–2378).png)
 
 
 ### TNG Era Films (2371–2379)
 
-![TNG Era Films (2371–2379)](assets/TNG%20Era%20Films%20%282371–2379%29.png)
+![TNG Era Films (2371–2379)](assets/TNG-Era-Films-(2371–2379).png)
 
 ---
 
 ### The Late 24th Century (2380–2402)
 
-![The Late 24th Century (2380–2402)](assets/The%20Late%2024th%20Century%20%282380–2402%29.png)
+![The Late 24th Century (2380–2402)](assets/The-Late-24th-Century-(2380–2402).png)
 
 ---
 
 ### The Far Future (32nd Century)
 
-![The Far Future (32nd Century)](assets/The%20Far%20Future%20%2832nd%20Century%29.png)
+![The Far Future (32nd Century)](assets/The-Far-Future-(32nd-Century).png)
 
-![The Far Future (32nd Century) - Discovery](assets/The%20Far%20Future%20%2832nd%20Century%291.png)
+![The Far Future (32nd Century) - Discovery](assets/The-Far-Future-(32nd-Century)1.png)
 
 ---
 
 ### Kelvin Timeline (Alternate Universe)
 
-![Kelvin Timeline (Alternate Universe)](assets/Kelvin%20Timeline%20%28Alternate%20Universe%29.png)
+![Kelvin Timeline (Alternate Universe)](assets/Kelvin-Timeline-(Alternate-Universe).png)
 
 ---
 
@@ -617,7 +617,7 @@ Includes all TV series, films, and specials.
 
 > A dedicated tribute to the iconic starships bearing the name *Enterprise*—from Jonathan Archer's NX-01 to Seven of Nine's NCC-1701-G. This section tracks each vessel's registry, commanding officers, active service period, and ultimate fate. Use this as a quick reference for Enterprise lineage across all series and films.
 
-![Starship Enterprise Legacy](assets/Starship%20Enterprise%20Legacy.png)
+![Starship Enterprise Legacy](assets/Starship-Enterprise-Legacy.png)
 
 ---
 
