@@ -1,3 +1,5 @@
+![Star Wars Timeline Banner](assets/star-wars-timeline-banner.png)
+
 # Comprehensive Star Wars Timeline
 
 ## Overview
